@@ -1,0 +1,151 @@
+[
+  {
+    "passage": "Agriculture remains a fundamental pillar of economic stability in many developing nations. Despite technological advancements, the sector is characterized by outdated practices, which hampers productivity. Governments in these regions often neglect agricultural reforms, focusing more on industrialization. Consequently, food security issues persist, leaving many countries dependent on imports. Experts argue that revitalizing the sector requires a multi-faceted approach, balancing modernization with sustainability.",
+    "questionText": "The passage suggests that agriculture in many developing countries is hindered by:",
+    "options": {
+      "A": "outdated practices",
+      "B": "over-reliance on technology",
+      "C": "excessive modernization",
+      "D": "government interference"
+    },
+    "correctAnswer": "A",
+    "explanation": "The passage highlights that agriculture in developing countries is hindered by outdated practices, not government interference, overreliance on technology, or excessive modernization."
+  },
+  {
+    "passage": "Agriculture remains a fundamental pillar of economic stability in many developing nations. Despite technological advancements, the sector is characterized by outdated practices, which hampers productivity. Governments in these regions often neglect agricultural reforms, focusing more on industrialization. Consequently, food security issues persist, leaving many countries dependent on imports. Experts argue that revitalizing the sector requires a multi-faceted approach, balancing modernization with sustainability.",
+    "questionText": "According to the passage, the focus of many governments is on:",
+    "options": {
+      "A": "Importation policies",
+      "B": "Industrialization",
+      "C": "Agricultural reforms",
+      "D": "Sustainability"
+    },
+    "correctAnswer": "B",
+    "explanation": "The passage states that governments often neglect agricultural reforms, focusing more on industrialization."
+  },
+  {
+    "passage": "Agriculture remains a fundamental pillar of economic stability in many developing nations. Despite technological advancements, the sector is characterized by outdated practices, which hampers productivity. Governments in these regions often neglect agricultural reforms, focusing more on industrialization. Consequently, food security issues persist, leaving many countries dependent on imports. Experts argue that revitalizing the sector requires a multi-faceted approach, balancing modernization with sustainability.",
+    "questionText": "One major problem mentioned in the passage is:",
+    "options": {
+      "A": "Excessive agricultural exports",
+      "B": "Lack of food security",
+      "C": "Technological regression",
+      "D": "Overproduction of food"
+    },
+    "correctAnswer": "B",
+    "explanation": "The passage discusses that food security issues persist, leaving many countries dependent on imports, indicating a lack of food security as the major problem."
+  },
+  {
+    "passage": "Agriculture remains a fundamental pillar of economic stability in many developing nations. Despite technological advancements, the sector is characterized by outdated practices, which hampers productivity. Governments in these regions often neglect agricultural reforms, focusing more on industrialization. Consequently, food security issues persist, leaving many countries dependent on imports. Experts argue that revitalizing the sector requires a multi-faceted approach, balancing modernization with sustainability.",
+    "questionText": "The passage recommends that agricultural development should be based on:",
+    "options": {
+      "A": "Modernization alone",
+      "B": "Sustainability only",
+      "C": "A mix of approaches",
+      "D": "Globalization alone"
+    },
+    "correctAnswer": "C",
+    "explanation": "The passage recommends a multi-faceted approach, balancing modernization with sustainability, which is more comprehensive than relying on a single approach."
+  },
+  {
+    "questionText": "The word in capital letters has the emphatic stress. Choose the option to which the given sentence relates. We went to the BANK yesterday.",
+    "options": {
+      "A": "Did we go to the BANK today?",
+      "B": "Did they go to the BANK today?",
+      "C": "Did we go to the MARKET yesterday?",
+      "D": "Did they go to the BANK yesterday?"
+    },
+    "correctAnswer": "C",
+    "explanation": "The emphatic stress is on the word 'BANK', so the matching sentence checks whether they went to a different place (MARKET) instead, to test what is being emphasized."
+  },
+  {
+    "questionText": "The word in capital letters has the emphatic stress. Choose the option to which the given sentence relates. I SAW the movie yesterday. Did you hear the movie yesterday?",
+    "options": {
+      "A": "No, I saw it.",
+      "B": "The movie wasn't great.",
+      "C": "Yes, I watched it.",
+      "D": "I heard the soundtrack."
+    },
+    "correctAnswer": "A",
+    "explanation": "The emphasis is on the verb 'SAW' (the action of seeing, not hearing), so the correct response confirms seeing rather than hearing: 'No, I saw it.'"
+  },
+  {
+    "questionText": "Identify the word where the vowel sound is short as in 'put'.",
+    "options": { "A": "Beet", "B": "Book", "C": "Beat", "D": "Boot" },
+    "correctAnswer": "B",
+    "explanation": "The word 'Book' has the short vowel sound /ʊ/ as in 'put'."
+  },
+  {
+    "questionText": "Identify the word with a different vowel sound from the others.",
+    "options": { "A": "debt", "B": "beat", "C": "neat", "D": "seat" },
+    "correctAnswer": "A",
+    "explanation": "'Debt' has the vowel sound /e/, while 'beat', 'neat', and 'seat' all have the vowel sound /i:/."
+  },
+  {
+    "questionText": "Choose the option that best completes the gap. The students, along with their teacher ___ for an excursion next week.",
+    "options": {
+      "A": "is leaving",
+      "B": "has left",
+      "C": "are leaving",
+      "D": "have left"
+    },
+    "correctAnswer": "C",
+    "explanation": "The subject 'students' is plural, so the verb must agree in number; 'are leaving' is correct."
+  },
+  {
+    "questionText": "Choose the option that best completes the gap. Each of the players ___ a chance to participate in the tournament.",
+    "options": {
+      "A": "were having",
+      "B": "have",
+      "C": "are having",
+      "D": "has"
+    },
+    "correctAnswer": "D",
+    "explanation": "'Each of the players' is a singular subject, so the verb must be singular; 'has' is correct."
+  },
+  {
+    "questionText": "Which of the following sets of words contain perfect rhymes?",
+    "options": {
+      "A": "Sight - Flight - Right",
+      "B": "Bear - Bare - fear",
+      "C": "Though - Rough - Tough",
+      "D": "Move - Love - Prove"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sight, Flight, and Right share the same stressed final syllable '-ight' with identical vowel and consonant sounds, making them perfect rhymes."
+  },
+  {
+    "questionText": "Which word has the same consonant sound at the end as 'flag'?",
+    "options": { "A": "dodge", "B": "tag", "C": "cup", "D": "lamp" },
+    "correctAnswer": "B",
+    "explanation": "'Tag' ends with the same final /g/ consonant sound as 'flag'."
+  },
+  {
+    "questionText": "Which of the following words has a different initial consonant sound from the others?",
+    "options": { "A": "Psychology", "B": "Scene", "C": "Shock", "D": "Sell" },
+    "correctAnswer": "C",
+    "explanation": "'Shock' begins with the /ʃ/ sound, while the others begin with the /s/ sound."
+  },
+  {
+    "questionText": "There is one word underlined. Choose the word nearest in meaning to the underlined word: The decision was taken to 'expedite' the approval process.",
+    "options": {
+      "A": "Accelerate",
+      "B": "Slowdown",
+      "C": "Delay",
+      "D": "Obstruct"
+    },
+    "correctAnswer": "A",
+    "explanation": "'Expedite' means to make something happen more quickly; 'Accelerate' has the same meaning."
+  },
+  {
+    "questionText": "There is one word underlined. Choose the word most nearly opposite in meaning to the underlined word: He tried to 'mollify' the situation instead of ___ it further.",
+    "options": {
+      "A": "Mitigating",
+      "B": "Soothing",
+      "C": "Aggravating",
+      "D": "Calming"
+    },
+    "correctAnswer": "C",
+    "explanation": "'Mollify' means to calm or soothe; its opposite is 'Aggravating', meaning to make worse."
+  }
+]

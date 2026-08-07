@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 280" width="380" height="280">
+  <defs>
+    <style>text { font-family: Georgia, serif; fill: #222; }</style>
+  </defs>
+
+  <!-- Triangle vertices: top(190,30), bottom-left(40,250), bottom-right(340,250) -->
+  <polygon points="190,30 40,250 340,250"
+           fill="none" stroke="#444" stroke-width="2.5"/>
+
+  <!-- Side labels -->
+  <!-- Left side: x -->
+  <text x="95" y="155" font-size="22" font-style="italic" text-anchor="middle">x</text>
+  <!-- Right side: 10cm -->
+  <text x="285" y="155" font-size="20" text-anchor="middle">10cm</text>
+
+  <!-- Bottom-left angle arc and label: 30° -->
+  <path d="M 70,250 A 30 30 0 0 1 58,222" fill="none" stroke="#444" stroke-width="1.8"/>
+  <text x="75" y="244" font-size="18" text-anchor="middle">30°</text>
+
+  <!-- Bottom-right angle arc and label: 60° -->
+  <path d="M 310,250 A 30 30 0 0 0 322,222" fill="none" stroke="#444" stroke-width="1.8"/>
+  <text x="305" y="244" font-size="18" text-anchor="middle">60°</text>
+
+  <!-- Base line (already part of polygon) -->
+</svg>

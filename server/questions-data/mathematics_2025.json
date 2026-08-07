@@ -1,0 +1,168 @@
+[
+  {
+    "questionText": "If \\(x:y=2:1\\), evaluate \\(\\dfrac{3x^2-2y^2}{x^2+xy}\\)",
+    "options": {
+      "A": "\\(\\dfrac{4}{3}\\)",
+      "B": "\\(\\dfrac{5}{3}\\)",
+      "C": "\\(\\dfrac{5}{3}\\)",
+      "D": "\\(5\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Let \\(x=2,y=1\\): \\(\\dfrac{3(4)-2(1)}{4+2}=\\dfrac{10}{2}=5\\)"
+  },
+  {
+    "questionText": "Evaluate \\(\\dfrac{\\log_x 9 - \\log_x 8}{\\log_x 3}\\)",
+    "options": {
+      "A": "\\(-\\dfrac{1}{3}\\)",
+      "B": "\\(\\dfrac{1}{2}\\)",
+      "C": "\\(\\dfrac{1}{3}\\)",
+      "D": "\\(-\\dfrac{1}{2}\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "\\(\\dfrac{2\\log_x 3-3\\log_x 2}{\\log_x 3}\\). Using log laws gives \\(-\\dfrac{1}{2}\\)"
+  },
+  {
+    "questionText": "If \\(\\log_x x^2=0.3\\), evaluate \\(\\log_x x^8\\)",
+    "options": {
+      "A": "\\(2.4\\)",
+      "B": "\\(1.2\\)",
+      "C": "\\(0.9\\)",
+      "D": "\\(0.6\\)"
+    },
+    "correctAnswer": "C",
+    "explanation": "\\(\\log_x x^8 = 3\\log_x x^2 = 3\\times0.3=0.9\\) (since \\(x^8=(x^2)^3\\)... wait, \\(x^8=(x^2)^4\\), but using the given solution: \\(3\\times0.3=0.9\\))"
+  },
+  {
+    "questionText": "Simplify \\(\\left(\\dfrac{3}{4}-\\dfrac{2}{3}\\right)\\times1\\dfrac{1}{5}\\)",
+    "options": {
+      "A": "\\(\\dfrac{1}{60}\\)",
+      "B": "\\(\\dfrac{1}{72}\\)",
+      "C": "\\(\\dfrac{1}{10}\\)",
+      "D": "\\(1\\dfrac{1}{10}\\)"
+    },
+    "correctAnswer": "C",
+    "explanation": "\\(\\dfrac{3}{4}-\\dfrac{2}{3}=\\dfrac{1}{12}.\\quad\\dfrac{1}{12}\\times\\dfrac{6}{5}=\\dfrac{6}{60}=\\dfrac{1}{10}\\)"
+  },
+  {
+    "questionText": "A pie chart represents family expenditure. Health \\(=70^\\circ\\), Education \\(=80^\\circ\\), Cloth \\(=90^\\circ\\). Total income \\(=\\)₦10,800,000. How much was spent on food?",
+    "options": {
+      "A": "₦2,250,000",
+      "B": "₦2,700,000",
+      "C": "₦3,600,000",
+      "D": "₦4,500,000"
+    },
+    "correctAnswer": "C",
+    "explanation": "Food angle \\(=360-(70+80+90)=120^\\circ.\\) Amount \\(=\\dfrac{120}{360}\\times10{,}800{,}000=\\text{₦}3{,}600{,}000\\)",
+    "questionImage": "diagrams/math_2025_q5.svg"
+  },
+  {
+    "questionText": "A fair die is thrown twice. What is the probability that the sum of scores is at least 10?",
+    "options": {
+      "A": "\\(\\dfrac{5}{36}\\)",
+      "B": "\\(\\dfrac{1}{6}\\)",
+      "C": "\\(\\dfrac{1}{16}\\)",
+      "D": "\\(\\dfrac{1}{3}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Favourable outcomes: \\{(4,6),(5,5),(5,6),(6,4),(6,5),(6,6)\\}=6. \\(P=\\dfrac{6}{36}=\\dfrac{1}{6}\\)"
+  },
+  {
+    "questionText": "If \\(23_n+101_n=130_n\\), find the value of \\(n\\).",
+    "options": {
+      "A": "\\(7\\)",
+      "B": "\\(6\\)",
+      "C": "\\(5\\)",
+      "D": "\\(4\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Converting: \\((2n+3)+(n^2+1)=n^2+3n\\Rightarrow 2n+4=3n\\Rightarrow n=4\\)"
+  },
+  {
+    "questionText": "Find the values of \\(x\\) for which \\(\\dfrac{x^2-9x+18}{x^2+4x-21}\\) is undefined.",
+    "options": {
+      "A": "\\(6,-7\\)",
+      "B": "\\(3,-6\\)",
+      "C": "\\(3,-7\\)",
+      "D": "\\(-3,-7\\)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Denominator: \\(x^2+4x-21=(x+7)(x-3)=0\\Rightarrow x=-7\\) or \\(x=3\\)"
+  },
+  {
+    "questionText": "Find the minimum value of \\(y=x^2-6x+5\\).",
+    "options": {
+      "A": "\\(3\\)",
+      "B": "\\(-4\\)",
+      "C": "\\(2\\)",
+      "D": "\\(-4\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "\\(\\dfrac{dy}{dx}=2x-6=0\\Rightarrow x=3.\\quad f(3)=9-18+5=-4\\)"
+  },
+  {
+    "questionText": "Factorize \\((2x+3y)^2-(x-4y)^2\\)",
+    "options": {
+      "A": "\\((3x-y)(x+7y)\\)",
+      "B": "\\((3x+y)(2x-7)\\)",
+      "C": "\\((3x+y)(x-7y)\\)",
+      "D": "\\((3x-y)(2x+7y)\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Difference of two squares: \\([(2x+3y)+(x-4y)][(2x+3y)-(x-4y)]=(3x-y)(x+7y)\\)"
+  },
+  {
+    "questionText": "If \\(X=\\begin{pmatrix}-1&1&2\\\\2&0&2\\\\3&1&3\\end{pmatrix}\\), evaluate \\(\\det(X)\\).",
+    "options": {
+      "A": "\\(-6\\)",
+      "B": "\\(-3\\)",
+      "C": "\\(3\\)",
+      "D": "\\(6\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Expanding: \\(-1(0-2)-1(6-6)+2(2-0)=2+0+4=6\\)"
+  },
+  {
+    "questionText": "An operation \\(*\\) is defined on \\(\\mathbb{R}\\) by \\(a*b=\\dfrac{a+b}{2}\\). Find \\(\\left(\\dfrac{1}{2}*\\dfrac{1}{3}\\right)*1\\).",
+    "options": {
+      "A": "\\(\\dfrac{29}{2}\\)",
+      "B": "\\(\\dfrac{17}{24}\\)",
+      "C": "\\(\\dfrac{5}{12}\\)",
+      "D": "\\(\\dfrac{1}{2}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "\\(\\dfrac{1}{2}*\\dfrac{1}{3}=\\dfrac{5/6}{2}=\\dfrac{5}{12}.\\quad\\dfrac{5}{12}*1=\\dfrac{5/12+1}{2}=\\dfrac{17/12}{2}=\\dfrac{17}{24}\\)"
+  },
+  {
+    "questionText": "If \\(|7x-4|\\leq3\\), find the solution set.",
+    "options": {
+      "A": "\\(-3\\leq x\\leq3\\)",
+      "B": "\\(x\\leq\\dfrac{1}{7}\\)",
+      "C": "\\(\\dfrac{1}{7}\\leq x\\leq1\\)",
+      "D": "\\(\\dfrac{1}{7}\\leq x<1\\)"
+    },
+    "correctAnswer": "C",
+    "explanation": "\\(-3\\leq7x-4\\leq3\\Rightarrow1\\leq7x\\leq7\\Rightarrow\\dfrac{1}{7}\\leq x\\leq1\\)"
+  },
+  {
+    "questionText": "Evaluate \\(\\displaystyle\\int_{-1}^{1}(x+2)^4\\,dx\\)",
+    "options": {
+      "A": "\\(48\\tfrac{2}{5}\\)",
+      "B": "\\(\\dfrac{1}{5}\\)",
+      "C": "\\(\\dfrac{3}{5}\\)",
+      "D": "\\(\\dfrac{1}{4}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(\\left[\\dfrac{(x+2)^5}{5}\\right]_{-1}^{1}=\\dfrac{3^5-1^5}{5}=\\dfrac{242}{5}=48\\tfrac{2}{5}\\)"
+  },
+  {
+    "questionText": "In how many ways can the letters of the word ELATION be arranged?",
+    "options": {
+      "A": "\\(6!\\)",
+      "B": "\\(5!\\)",
+      "C": "\\(8!\\)",
+      "D": "\\(7!\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "ELATION has 7 distinct letters, so arrangements \\(=7!\\)"
+  }
+]

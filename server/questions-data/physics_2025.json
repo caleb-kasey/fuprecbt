@@ -1,0 +1,167 @@
+[
+  {
+    "questionText": "The type of energy stored by a dry Leclanche cell is",
+    "options": {
+      "A": "chemical",
+      "B": "electrical",
+      "C": "nuclear",
+      "D": "thermal"
+    },
+    "correctAnswer": "A",
+    "explanation": "A dry Leclanche cell stores chemical energy which is converted to electrical energy when in use."
+  },
+  {
+    "questionText": "The microphone transforms energy from",
+    "options": {
+      "A": "electrical to sound",
+      "B": "sound to electrical",
+      "C": "electrical to mechanical",
+      "D": "sound to mechanical"
+    },
+    "correctAnswer": "B",
+    "explanation": "A microphone converts sound energy into electrical energy."
+  },
+  {
+    "questionText": "The ice and steam points of a resistance thermometer are \\(12.0\\,\\Omega\\) and \\(20.0\\,\\Omega\\) respectively. Calculate the resistance at \\(10^\\circ\\text{C}\\).",
+    "options": {
+      "A": "\\(12.4\\,\\Omega\\)",
+      "B": "\\(12.8\\,\\Omega\\)",
+      "C": "\\(13.2\\,\\Omega\\)",
+      "D": "\\(13.4\\,\\Omega\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Using \\(C=\\dfrac{h_2-h_1}{h_3-h_1}\\times100\\): \\(10=\\dfrac{h_2-12}{20-12}\\times100\\Rightarrow h_2=12.8\\,\\Omega\\)"
+  },
+  {
+    "questionText": "A beam of light which appears to come from a point in space is said to be",
+    "options": {
+      "A": "convergent",
+      "B": "divergent",
+      "C": "parallel",
+      "D": "circular"
+    },
+    "correctAnswer": "B",
+    "explanation": "A divergent beam spreads out from a point source."
+  },
+  {
+    "questionText": "An electron moving with speed \\(5.0\\times10^5\\,\\text{ms}^{-1}\\) enters a uniform magnetic field at \\(90^\\circ\\). Find the magnetic force. \\([e=1.6\\times10^{-19}\\,\\text{C},\\;B=0.25\\,\\text{T}]\\)",
+    "options": {
+      "A": "\\(2\\times10^{-14}\\,\\text{N}\\)",
+      "B": "\\(1\\times10^{-14}\\,\\text{N}\\)",
+      "C": "\\(5\\times10^3\\,\\text{N}\\)",
+      "D": "\\(5\\times10^{-3}\\,\\text{N}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(F=qvB\\sin\\theta=1.6\\times10^{-19}\\times5\\times10^5\\times0.25\\times1=2\\times10^{-14}\\,\\text{N}\\)"
+  },
+  {
+    "questionText": "Three cells each of emf \\(1.5\\,\\text{V}\\) and internal resistance \\(2.5\\,\\Omega\\) are connected in parallel. Find the net emf and internal resistance.",
+    "options": {
+      "A": "\\(4.5\\,\\text{V},\\;7.5\\,\\Omega\\)",
+      "B": "\\(4.5\\,\\text{V},\\;0.83\\,\\Omega\\)",
+      "C": "\\(1.5\\,\\text{V},\\;7.5\\,\\Omega\\)",
+      "D": "\\(1.5\\,\\text{V},\\;0.83\\,\\Omega\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Cells in parallel: emf stays \\(1.5\\,\\text{V}\\); internal resistance \\(=\\dfrac{2.5}{3}\\approx0.83\\,\\Omega\\)"
+  },
+  {
+    "questionText": "The bond that forms a semiconductor is",
+    "options": {
+      "A": "ionic",
+      "B": "metallic",
+      "C": "covalent",
+      "D": "electrovalent"
+    },
+    "correctAnswer": "C",
+    "explanation": "Covalent bonds are found in semiconductors such as silicon and germanium."
+  },
+  {
+    "questionText": "A radioactive substance has a half-life of 20 years. What fraction of the original nuclei will decay after 80 years?",
+    "options": {
+      "A": "\\(\\dfrac{15}{16}\\)",
+      "B": "\\(\\dfrac{1}{16}\\)",
+      "C": "\\(\\dfrac{1}{4}\\)",
+      "D": "\\(\\dfrac{1}{32}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "After 4 half-lives, fraction remaining \\(=\\left(\\dfrac{1}{2}\\right)^4=\\dfrac{1}{16}\\). Fraction decayed \\(=1-\\dfrac{1}{16}=\\dfrac{15}{16}\\)"
+  },
+  {
+    "questionText": "A boy drags a bag of rice with a force of \\(2\\,\\text{N}\\) at \\(60^\\circ\\) to horizontal over \\(3\\,\\text{m}\\). Calculate the work done.",
+    "options": {
+      "A": "\\(6\\,\\text{J}\\)",
+      "B": "\\(5\\,\\text{J}\\)",
+      "C": "\\(4\\,\\text{J}\\)",
+      "D": "\\(3\\,\\text{J}\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "\\(W=Fd\\cos\\theta=2\\times3\\times\\cos60^\\circ=6\\times0.5=3\\,\\text{J}\\)"
+  },
+  {
+    "questionText": "Which of the following is a scalar quantity?",
+    "options": {
+      "A": "magnetic flux",
+      "B": "magnetic flux density",
+      "C": "electric potential",
+      "D": "electric field intensity"
+    },
+    "correctAnswer": "C",
+    "explanation": "Electric potential is a scalar quantity; the others are vectors."
+  },
+  {
+    "questionText": "An immersion heater rated \\(2.0\\,\\text{A}\\), \\(240\\,\\text{V}\\) heats \\(2.5\\,\\text{kg}\\) of water from \\(52^\\circ\\text{C}\\) to \\(100^\\circ\\text{C}\\). Find the time taken. \\([c=4.2\\times10^3\\,\\text{J\\,kg}^{-1}\\text{K}^{-1}]\\)",
+    "options": {
+      "A": "\\(1.05\\times10^3\\,\\text{s}\\)",
+      "B": "\\(1.05\\times10\\,\\text{s}\\)",
+      "C": "\\(1.05\\times10^2\\,\\text{s}\\)",
+      "D": "\\(1.05\\times10^4\\,\\text{s}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(mc\\theta=IVt\\Rightarrow t=\\dfrac{2.5\\times4.2\\times10^3\\times48}{2\\times240}=1.05\\times10^3\\,\\text{s}\\)"
+  },
+  {
+    "questionText": "An empty density bottle weighs \\(2\\,\\text{N}\\), \\(5\\,\\text{N}\\) with water and \\(4\\,\\text{N}\\) with olive oil. Find the relative density of olive oil.",
+    "options": {
+      "A": "\\(\\dfrac{1}{3}\\)",
+      "B": "\\(\\dfrac{2}{3}\\)",
+      "C": "\\(\\dfrac{1}{5}\\)",
+      "D": "\\(\\dfrac{2}{5}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "\\(\\text{RD}=\\dfrac{W_{\\text{oil}}-W_{\\text{empty}}}{W_{\\text{water}}-W_{\\text{empty}}}=\\dfrac{4-2}{5-2}=\\dfrac{2}{3}\\)"
+  },
+  {
+    "questionText": "An object is placed \\(15\\,\\text{cm}\\) in front of a concave mirror of focal length \\(20\\,\\text{cm}\\). Describe the image.",
+    "options": {
+      "A": "virtual and 40 cm from the mirror",
+      "B": "real and 60 cm from the mirror",
+      "C": "virtual and 60 cm from the mirror",
+      "D": "real and at infinity"
+    },
+    "correctAnswer": "C",
+    "explanation": "\\(v=\\dfrac{uf}{u-f}=\\dfrac{15\\times20}{15-20}=\\dfrac{300}{-5}=-60\\,\\text{cm}\\) (negative \\(\\Rightarrow\\) virtual, 60 cm from mirror)"
+  },
+  {
+    "questionText": "The energy of a photon with wavelength \\(\\lambda=10^{-10}\\,\\text{m}\\) is \\([h=6.63\\times10^{-34}\\,\\text{J\\,s},\\;c=3\\times10^8\\,\\text{ms}^{-1}]\\)",
+    "options": {
+      "A": "\\(2.0\\times10^{-2}\\,\\text{J}\\)",
+      "B": "\\(1.7\\times10^{-12}\\,\\text{J}\\)",
+      "C": "\\(2.0\\times10^{-15}\\,\\text{J}\\)",
+      "D": "\\(1.7\\times10^{-13}\\,\\text{J}\\)"
+    },
+    "correctAnswer": "C",
+    "explanation": "\\(Q=\\dfrac{hc}{\\lambda}=\\dfrac{6.63\\times10^{-34}\\times3\\times10^8}{10^{-10}}\\approx2.0\\times10^{-15}\\,\\text{J}\\)"
+  },
+  {
+    "questionText": "A transformer has 500 turns on the primary and 2500 turns on the secondary. If the primary voltage is \\(120\\,\\text{V}\\), find the output voltage.",
+    "options": {
+      "A": "\\(6000\\,\\text{V}\\)",
+      "B": "\\(600\\,\\text{V}\\)",
+      "C": "\\(240\\,\\text{V}\\)",
+      "D": "\\(60\\,\\text{V}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "\\(\\dfrac{N_1}{N_2}=\\dfrac{V_1}{V_2}\\Rightarrow V_2=\\dfrac{120\\times2500}{500}=600\\,\\text{V}\\)"
+  }
+]

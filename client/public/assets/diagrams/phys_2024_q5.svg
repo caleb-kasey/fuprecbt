@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 380" width="340" height="380">
+  <defs>
+    <style>text { font-family: Georgia, serif; fill: #222; }</style>
+    <marker id="arr" markerWidth="10" markerHeight="7"
+            refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#444"/>
+    </marker>
+    <marker id="arrdown" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- Ceiling hatching -->
+  <line x1="60" y1="30" x2="280" y2="30" stroke="#444" stroke-width="2.5"/>
+  <line x1="70" y1="30" x2="55" y2="15" stroke="#444" stroke-width="1.5"/>
+  <line x1="95" y1="30" x2="80" y2="15" stroke="#444" stroke-width="1.5"/>
+  <line x1="120" y1="30" x2="105" y2="15" stroke="#444" stroke-width="1.5"/>
+  <line x1="145" y1="30" x2="130" y2="15" stroke="#444" stroke-width="1.5"/>
+  <line x1="170" y1="30" x2="155" y2="15" stroke="#444" stroke-width="1.5"/>
+  <line x1="195" y1="30" x2="180" y2="15" stroke="#444" stroke-width="1.5"/>
+  <line x1="220" y1="30" x2="205" y2="15" stroke="#444" stroke-width="1.5"/>
+  <line x1="245" y1="30" x2="230" y2="15" stroke="#444" stroke-width="1.5"/>
+  <line x1="270" y1="30" x2="255" y2="15" stroke="#444" stroke-width="1.5"/>
+
+  <!-- Junction point at top of strings -->
+  <circle cx="170" cy="100" r="4" fill="#444"/>
+
+  <!-- Left string: from ceiling-left to junction, angled 30° from vertical -->
+  <!-- 30° from vertical means: dx = sin(30)=0.5, dy = cos(30)=0.866 -->
+  <!-- Junction at (170,100), string length ~80px → ceiling at (170-40, 100-69) = (130, 31) -->
+  <line x1="130" y1="31" x2="170" y2="100"
+        stroke="#444" stroke-width="2.2"
+        marker-start="url(#arr)"/>
+  <text x="118" y="65" font-size="18" text-anchor="middle">T</text>
+
+  <!-- Right string: mirror -->
+  <line x1="210" y1="31" x2="170" y2="100"
+        stroke="#444" stroke-width="2.2"
+        marker-start="url(#arr)"/>
+  <text x="222" y="65" font-size="18" text-anchor="middle">T</text>
+
+  <!-- Angle labels -->
+  <text x="145" y="108" font-size="16">30°</text>
+  <text x="178" y="108" font-size="16">30°</text>
+
+  <!-- Block (rectangle) -->
+  <rect x="100" y="100" width="140" height="110"
+        fill="white" stroke="#444" stroke-width="2.2"/>
+
+  <!-- Downward arrow: 20N -->
+  <line x1="170" y1="210" x2="170" y2="300"
+        stroke="#444" stroke-width="2.5"
+        marker-end="url(#arrdown)"/>
+  <text x="170" y="325" font-size="20" text-anchor="middle">20N</text>
+</svg>

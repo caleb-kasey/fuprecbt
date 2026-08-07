@@ -1,0 +1,92 @@
+[
+  {
+    "questionText": "The technique commonly used in the purification of solid is",
+    "options": { "A": "chromatography", "B": "distillation", "C": "crystallization", "D": "centrifugation" },
+    "correctAnswer": "C",
+    "explanation": "Crystallization is the most commonly used method for the purification of solids."
+  },
+  {
+    "questionText": "Which of the following molecules is held by hydrogen bond?",
+    "options": { "A": "\\(\\text{H}_2\\text{SO}_4\\)", "B": "HF", "C": "\\(\\text{CH}_4\\)", "D": "HBr" },
+    "correctAnswer": "B",
+    "explanation": "Hydrogen fluoride (HF) is held by the strongest hydrogen bond because of the high electronegativity of fluorine."
+  },
+  {
+    "questionText": "A gas X diffuses twice as fast as gas Y under the same conditions. If the relative molecular mass of X is 28, calculate the relative molecular mass of Y.",
+    "options": { "A": "112", "B": "120", "C": "56", "D": "14" },
+    "correctAnswer": "A",
+    "explanation": "\\(\\dfrac{R_x}{R_y}=\\sqrt{\\dfrac{M_y}{M_x}}\\Rightarrow2=\\sqrt{\\dfrac{M_y}{28}}\\Rightarrow4=\\dfrac{M_y}{28}\\Rightarrow M_y=112\\)."
+  },
+  {
+    "questionText": "What mass of \\(\\text{K}_2\\text{CrO}_4\\) is required to prepare \\(250\\,\\text{cm}^3\\) of \\(0.02\\,\\text{mol\\,dm}^{-3}\\) solution? \\([\\text{K}_2\\text{CrO}_4=194.2\\,\\text{gmol}^{-1}]\\)",
+    "options": { "A": "\\(97.1\\,\\text{g}\\)", "B": "\\(19.42\\,\\text{g}\\)", "C": "\\(9.7\\,\\text{g}\\)", "D": "\\(0.97\\,\\text{g}\\)" },
+    "correctAnswer": "D",
+    "explanation": "\\(n=CV=0.02\\times0.25=0.005\\,\\text{mol}\\). Mass \\(=0.005\\times194.2=0.971\\approx0.97\\,\\text{g}\\)."
+  },
+  {
+    "questionText": "In which of the following are water molecules in the most disorderly arrangement?",
+    "options": { "A": "ice at \\(0^\\circ\\text{C}\\)", "B": "water at \\(10^\\circ\\text{C}\\)", "C": "water at \\(100^\\circ\\text{C}\\)", "D": "steam at \\(100^\\circ\\text{C}\\)" },
+    "correctAnswer": "D",
+    "explanation": "Steam at \\(100^\\circ\\text{C}\\) has the highest entropy (degree of disorderliness) because molecules in gas phase are most randomly arranged."
+  },
+  {
+    "questionText": "The rate law for a given reaction is \\(\\text{Rate}=K[X][Y]^2\\). What is the overall order of the reaction?",
+    "options": { "A": "1", "B": "2", "C": "3", "D": "4" },
+    "correctAnswer": "C",
+    "explanation": "Overall order \\(=1+2=3\\)."
+  },
+  {
+    "questionText": "\\(2\\text{H}_2\\text{O}(l)+2\\text{F}_2(g)\\rightarrow4\\text{HF}(aq)+\\text{O}_2(g)\\). In the reaction above, the oxidation number of oxygen changes from",
+    "options": { "A": "\\(-1\\) to 0", "B": "\\(-2\\) to 0", "C": "0 to \\(-2\\)", "D": "0 to \\(+1\\)" },
+    "correctAnswer": "B",
+    "explanation": "In \\(\\text{H}_2\\text{O}\\), oxygen has oxidation state \\(-2\\). In \\(\\text{O}_2\\) (product), oxygen has oxidation state 0. So it changes from \\(-2\\) to 0."
+  },
+  {
+    "questionText": "How many Faraday of electricity is required to produce \\(0.25\\,\\text{mol}\\) of copper?",
+    "options": { "A": "\\(0.50\\,\\text{F}\\)", "B": "\\(1.00\\,\\text{F}\\)", "C": "\\(0.01\\,\\text{F}\\)", "D": "\\(0.05\\,\\text{F}\\)" },
+    "correctAnswer": "A",
+    "explanation": "\\(\\text{Cu}^{2+}\\) requires 2 electrons. \\(Q=n\\times c=0.25\\times2=0.5\\,\\text{F}\\)."
+  },
+  {
+    "questionText": "Addition of charcoal in the filter bed for water purification is to",
+    "options": { "A": "prevent goiter", "B": "prevent tooth decay", "C": "kill germs", "D": "remove odour" },
+    "correctAnswer": "D",
+    "explanation": "GAC (Granulated Activated Charcoal) helps to remove offensive odour from water."
+  },
+  {
+    "questionText": "The resulting solution when water reacts with chlorine contains",
+    "options": { "A": "HCl and HOCl", "B": "HCl C", "C": "HOCl D", "D": "\\(\\text{H}_2\\) and HCl" },
+    "correctAnswer": "A",
+    "explanation": "\\(\\text{Cl}_2(g)+\\text{H}_2\\text{O}(l)\\rightarrow\\text{HCl}(aq)+\\text{HOCl}(aq)\\)."
+  },
+  {
+    "questionText": "The substance that is used for vulcanization of rubber is",
+    "options": { "A": "chlorine", "B": "hydrogen peroxide", "C": "sulphur", "D": "tetraoxosulphate(VI) acid" },
+    "correctAnswer": "C",
+    "explanation": "Sulphur is used in vulcanization of rubber to improve its strength and elasticity."
+  },
+  {
+    "questionText": "The gas that is used for the treatment of cancer is",
+    "options": { "A": "neon", "B": "radon", "C": "xenon", "D": "argon" },
+    "correctAnswer": "B",
+    "explanation": "Radon is a noble gas that is radioactive in nature and is used in radiation therapy for cancer treatment."
+  },
+  {
+    "questionText": "The allotrope of carbon used in decolourization of sugar is",
+    "options": { "A": "soot", "B": "campblack", "C": "graphite", "D": "charcoal" },
+    "correctAnswer": "D",
+    "explanation": "Animal charcoal is used for decolourization of sugar."
+  },
+  {
+    "questionText": "Latex is a polymer of",
+    "options": { "A": "isoprene", "B": "ethenechloride", "C": "styrene", "D": "terylene" },
+    "correctAnswer": "A",
+    "explanation": "Latex is a raw material for natural rubber, which is a polymer of isoprene."
+  },
+  {
+    "questionText": "One mole of sucrose \\(\\text{C}_{12}\\text{H}_{22}\\text{O}_{12}\\) dehydrated will give how many moles of carbon?",
+    "options": { "A": "11", "B": "12", "C": "3", "D": "6" },
+    "correctAnswer": "B",
+    "explanation": "Sucrose \\(\\text{C}_{12}\\text{H}_{22}\\text{O}_{12}\\) has 12 carbon atoms, so one mole gives 12 moles of carbon."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "questionText": "What is the level of organization of an onion bulb?",
+    "options": { "A": "tissue", "B": "organ", "C": "systemic", "D": "organismal" },
+    "correctAnswer": "B",
+    "explanation": "An onion bulb is made up of different tissues working together to perform a function, classifying it as an organ."
+  },
+  {
+    "questionText": "Which of the following describes the sequence of blood flow from the heart to a tissue?",
+    "options": { "A": "heart → artery → arteriole → tissue", "B": "Heart → vein → venule → tissue", "C": "Heart → venule → vein → tissue", "D": "Heart → arteriole → artery → tissue" },
+    "correctAnswer": "A",
+    "explanation": "Blood flows from the heart through arteries, then into smaller arterioles, before reaching the tissue."
+  },
+  {
+    "questionText": "In Mendelian inheritance, discontinuous characters are controlled by the",
+    "options": { "A": "centromere", "B": "alleles", "C": "chromosomes", "D": "chromatids" },
+    "correctAnswer": "B",
+    "explanation": "Discontinuous variations are controlled by alleles of a single gene or a small number of genes."
+  },
+  {
+    "questionText": "A woman with the ability to roll her tongue (Tt) marries a man who cannot roll his tongue (tt). What is the probability of each of their children being a tongue roller?",
+    "options": { "A": "100%", "B": "75%", "C": "50%", "D": "25%" },
+    "correctAnswer": "C",
+    "explanation": "Crossing Tt x tt gives offspring in the ratio Tt:Tt:tt:tt, meaning half (50%) of the children would be tongue rollers."
+  },
+  {
+    "questionText": "Plants that grow in an area that is neither too wet nor too dry are",
+    "options": { "A": "xerophytes", "B": "mesophytes", "C": "epiphytes", "D": "hydrophytes" },
+    "correctAnswer": "B",
+    "explanation": "Mesophytes are plants adapted to environments with a moderate amount of water, neither too wet nor too dry."
+  },
+  {
+    "questionText": "According to Darwin, the driving force behind evolutionary change is",
+    "options": { "A": "natural selection", "B": "evolutionary change", "C": "genetic drift", "D": "gene flow" },
+    "correctAnswer": "A",
+    "explanation": "Charles Darwin proposed that natural selection is the driving force behind evolutionary change."
+  },
+  {
+    "questionText": "A seedling grown in the dark is likely to be",
+    "options": { "A": "etiolated", "B": "dormant", "C": "sturdy", "D": "stunted" },
+    "correctAnswer": "A",
+    "explanation": "Plants grown in the absence of light undergo etiolation, characterized by pale, elongated growth."
+  },
+  {
+    "questionText": "When yeast respires anaerobically, it converts sugar to carbon (IV) oxide and",
+    "options": { "A": "oxygen", "B": "acid", "C": "alcohol", "D": "water" },
+    "correctAnswer": "C",
+    "explanation": "Anaerobic respiration in yeast (alcoholic fermentation) converts sugar into carbon dioxide and ethanol (alcohol)."
+  },
+  {
+    "questionText": "Which of the following statements is true of blood groups and blood transfusion?",
+    "options": { "A": "group O is the recipient", "B": "group A can donate to group A only", "C": "group AB is the universal recipient", "D": "group B can donate to group B only" },
+    "correctAnswer": "C",
+    "explanation": "Group AB is the universal recipient, meaning individuals with blood group AB can receive blood from any group."
+  },
+  {
+    "questionText": "The ability of an organism to live successfully in an environment is known as",
+    "options": { "A": "resistance", "B": "competition", "C": "succession", "D": "adaptation" },
+    "correctAnswer": "D",
+    "explanation": "Adaptation refers to the ability of an organism to live successfully in a given environment."
+  }
+]

@@ -1,0 +1,169 @@
+[
+  {
+    "questionText": "The equation \\(P^xV^yT^z=\\text{Constant}\\) relates to Charles' law if",
+    "options": {
+      "A": "\\(x=1,y=2,z=0\\)",
+      "B": "\\(x=1,y=0,z=1\\)",
+      "C": "\\(x=0,y=1,z=1\\)",
+      "D": "\\(x=0,y=1,z=-1\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Charles' law: \\(V\\propto T\\Rightarrow V^1T^{-1}=\\text{const}\\), so \\(x=0,y=1,z=-1\\)"
+  },
+  {
+    "questionText": "Two forces \\(F_1=6.0\\,\\text{N}\\) and \\(F_2=8.0\\,\\text{N}\\) act at right angles. Find the resultant.",
+    "options": {
+      "A": "\\(12\\,\\text{N}\\)",
+      "B": "\\(13\\,\\text{N}\\)",
+      "C": "\\(14\\,\\text{N}\\)",
+      "D": "\\(10\\,\\text{N}\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "\\(R=\\sqrt{F_1^2+F_2^2}=\\sqrt{36+64}=\\sqrt{100}=10\\,\\text{N}\\)",
+    "questionImage": "diagrams/phys_2024_q2.svg"
+  },
+  {
+    "questionText": "A car of mass \\(2000\\,\\text{kg}\\) moves in a circle of radius \\(50\\,\\text{m}\\) at \\(20\\,\\text{ms}^{-1}\\). Find the centripetal force.",
+    "options": {
+      "A": "\\(1.5\\times10^4\\,\\text{N}\\)",
+      "B": "\\(1.6\\times10^4\\,\\text{N}\\)",
+      "C": "\\(1.5\\times10^3\\,\\text{N}\\)",
+      "D": "\\(1.6\\times10^3\\,\\text{N}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "\\(F=\\dfrac{mv^2}{r}=\\dfrac{2000\\times400}{50}=16000\\,\\text{N}=1.6\\times10^4\\,\\text{N}\\)"
+  },
+  {
+    "questionText": "A ball of mass \\(100\\,\\text{g}\\) falls from \\(5\\,\\text{m}\\) and rebounds to \\(3\\,\\text{m}\\). What energy is lost? \\([g=10\\,\\text{ms}^{-2}]\\)",
+    "options": {
+      "A": "\\(2\\,\\text{J}\\)",
+      "B": "\\(20\\,\\text{J}\\)",
+      "C": "\\(100\\,\\text{J}\\)",
+      "D": "\\(1000\\,\\text{J}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(E_{\\text{lost}}=mg(h_1-h_2)=0.1\\times10\\times(5-3)=2\\,\\text{J}\\)"
+  },
+  {
+    "questionText": "Two strings each at \\(30^\\circ\\) to the vertical support a \\(20\\,\\text{N}\\) weight. Find the tension \\(T\\) in each string.",
+    "options": {
+      "A": "\\(10.0\\,\\text{N}\\)",
+      "B": "\\(11.8\\,\\text{N}\\)",
+      "C": "\\(20.0\\,\\text{N}\\)",
+      "D": "\\(40\\,\\text{N}\\)"
+    },
+    "correctAnswer": "C",
+    "explanation": "\\(2T\\sin30^\\circ=20\\Rightarrow T=\\dfrac{20}{2\\times0.5}=20\\,\\text{N}\\)",
+    "questionImage": "diagrams/phys_2024_q5.svg"
+  },
+  {
+    "questionText": "The relative density of a powdery substance can be measured using a beam balance and a",
+    "options": {
+      "A": "burette",
+      "B": "pipette",
+      "C": "measuring cylinder",
+      "D": "density bottle"
+    },
+    "correctAnswer": "D",
+    "explanation": "A density bottle is used with a beam balance to measure relative density of powdery substances."
+  },
+  {
+    "questionText": "How much heat is absorbed by \\(0.05\\,\\text{kg}\\) of copper \\([c=390\\,\\text{J\\,kg}^{-1}\\text{K}^{-1}]\\) heated from \\(20^\\circ\\text{C}\\) to \\(70^\\circ\\text{C}\\)?",
+    "options": {
+      "A": "\\(975\\,\\text{J}\\)",
+      "B": "\\(687\\,\\text{J}\\)",
+      "C": "\\(886\\,\\text{J}\\)",
+      "D": "\\(759\\,\\text{J}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(Q=mc\\theta=0.05\\times390\\times50=975\\,\\text{J}\\)"
+  },
+  {
+    "questionText": "In a liquid-in-glass thermometer, sensitivity is enhanced if the",
+    "options": {
+      "A": "volume expansivity of the liquid is high",
+      "B": "thermal conductivity of the liquid is low",
+      "C": "diameter of the capillary tube is large",
+      "D": "boiling point of the liquid is high"
+    },
+    "correctAnswer": "A",
+    "explanation": "High volume expansivity causes greater expansion for a small temperature change, increasing sensitivity."
+  },
+  {
+    "questionText": "If the hole of a pin-hole camera is increased, the image becomes",
+    "options": {
+      "A": "brighter and blurred",
+      "B": "brighter and larger",
+      "C": "sharp and magnified",
+      "D": "sharp and diminished"
+    },
+    "correctAnswer": "A",
+    "explanation": "A larger hole admits more light (brighter) but reduces sharpness (blurred)."
+  },
+  {
+    "questionText": "If the refractive index of a medium is \\(2.0\\), find the critical angle.",
+    "options": {
+      "A": "\\(30^\\circ\\)",
+      "B": "\\(42^\\circ\\)",
+      "C": "\\(45^\\circ\\)",
+      "D": "\\(50^\\circ\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(\\sin C=\\dfrac{1}{n}=\\dfrac{1}{2}\\Rightarrow C=\\sin^{-1}(0.5)=30^\\circ\\)"
+  },
+  {
+    "questionText": "The wavelength of the first overtone of a note in a closed pipe of length \\(33\\,\\text{cm}\\) is",
+    "options": {
+      "A": "\\(33\\,\\text{cm}\\)",
+      "B": "\\(44\\,\\text{cm}\\)",
+      "C": "\\(22\\,\\text{cm}\\)",
+      "D": "\\(17\\,\\text{cm}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "For a closed pipe, first overtone: \\(L=\\dfrac{3\\lambda}{4}\\Rightarrow\\lambda=\\dfrac{4\\times33}{3}=44\\,\\text{cm}\\)"
+  },
+  {
+    "questionText": "Calculate the electric field intensity between two plates with p.d. \\(6.5\\,\\text{V}\\) separated by \\(35\\,\\text{cm}\\).",
+    "options": {
+      "A": "\\(18.57\\,\\text{NC}^{-1}\\)",
+      "B": "\\(53.06\\,\\text{NC}^{-1}\\)",
+      "C": "\\(2.28\\,\\text{NC}^{-1}\\)",
+      "D": "\\(0.80\\,\\text{NC}^{-1}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(E=\\dfrac{V}{d}=\\dfrac{6.5}{0.35}=18.57\\,\\text{NC}^{-1}\\)"
+  },
+  {
+    "questionText": "Three \\(12\\,\\Omega\\) resistors in parallel with \\(8\\,\\text{V}\\) across them. Find the total current.",
+    "options": {
+      "A": "\\(2\\,\\text{A}\\)",
+      "B": "\\(3\\,\\text{A}\\)",
+      "C": "\\(1.5\\,\\text{A}\\)",
+      "D": "\\(4\\,\\text{A}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(R_T=\\dfrac{12}{3}=4\\,\\Omega.\\quad I=\\dfrac{V}{R_T}=\\dfrac{8}{4}=2\\,\\text{A}\\)"
+  },
+  {
+    "questionText": "A \\(10\\,\\text{m}\\) wire carrying \\(4\\,\\text{A}\\) lies at \\(60^\\circ\\) to a magnetic field \\(B=0.8\\,\\text{T}\\). Find the force.",
+    "options": {
+      "A": "\\(48\\,\\text{N}\\)",
+      "B": "\\(27.7\\,\\text{N}\\)",
+      "C": "\\(32\\,\\text{N}\\)",
+      "D": "\\(64\\,\\text{N}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "\\(F=BIL\\sin\\theta=0.8\\times4\\times10\\times\\sin60^\\circ=32\\times0.866\\approx27.7\\,\\text{N}\\)"
+  },
+  {
+    "questionText": "An a.c. current is \\(I=10\\sin(\\omega t)\\). Find the rms value.",
+    "options": {
+      "A": "\\(95.0\\,\\text{A}\\)",
+      "B": "\\(7.1\\,\\text{A}\\)",
+      "C": "\\(10.0\\,\\text{A}\\)",
+      "D": "\\(14.1\\,\\text{A}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "\\(I_{\\text{rms}}=\\dfrac{I_0}{\\sqrt{2}}=\\dfrac{10}{\\sqrt{2}}\\approx7.1\\,\\text{A}\\)"
+  }
+]

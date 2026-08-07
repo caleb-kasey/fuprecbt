@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320">
+  <!-- 
+    Angles: Health=70°, Education=80°, Cloth=90°(right angle shown), Food=120°
+    Starting from top (270° in SVG = 12 o'clock), going clockwise
+    Health: 270° to 340° (70°)
+    Education: 340° to 60°  (80°)
+    Food:  60° to 180° (120°)
+    Cloth: 180° to 270° (90°)
+  -->
+  <defs>
+    <style>
+      text { font-family: Georgia, serif; fill: #222; }
+    </style>
+  </defs>
+
+  <!-- Circle -->
+  <circle cx="160" cy="160" r="130" fill="white" stroke="#444" stroke-width="2.2"/>
+
+  <!-- Sector lines from center -->
+  <!-- Top (start of Health / end of Cloth): 270° → (160, 30) -->
+  <line x1="160" y1="160" x2="160" y2="30" stroke="#444" stroke-width="2"/>
+  <!-- Health/Education boundary: 340° → cos(340°)=0.940, sin(340°)=-0.342 → (282, 115) -->
+  <line x1="160" y1="160" x2="282" y2="115" stroke="#444" stroke-width="2"/>
+  <!-- Education/Food boundary: 60° → cos(60°)=0.5, sin(60°)=0.866 → (225, 273) -->
+  <line x1="160" y1="160" x2="225" y2="273" stroke="#444" stroke-width="2"/>
+  <!-- Food/Cloth boundary: 180° → (-130, 0) → (30, 160) -->
+  <line x1="160" y1="160" x2="30" y2="160" stroke="#444" stroke-width="2"/>
+
+  <!-- Right angle box at center (Cloth sector corner) -->
+  <rect x="160" y="148" width="12" height="12" fill="none" stroke="#444" stroke-width="1.5"/>
+
+  <!-- Sector Labels -->
+  <!-- Health: midpoint ~305° → cos=-0.259, sin=-0.966 scaled ~80px from center -->
+  <text x="152" y="85" font-size="17" text-anchor="middle">Health</text>
+  <!-- Education: midpoint ~20° → cos=0.940, sin=0.342 -->
+  <text x="248" y="148" font-size="17" text-anchor="middle" transform="rotate(70,248,148)">Education</text>
+  <!-- Food: midpoint ~120° → cos=-0.5, sin=0.866 -->
+  <text x="195" y="250" font-size="16" text-anchor="middle">Food</text>
+  <!-- Cloth: midpoint ~225° → cos=-0.707, sin=-0.707 -->
+  <text x="75" y="225" font-size="17" text-anchor="middle" transform="rotate(-45,75,225)">Cloth</text>
+
+  <!-- Angle annotations near center -->
+  <!-- 70° arc label (Health) -->
+  <path d="M 160 110 A 50 50 0 0 1 210 138" fill="none" stroke="#444" stroke-width="1.2"/>
+  <text x="190" y="126" font-size="14" text-anchor="middle">70°</text>
+
+  <!-- 80° arc label (Education) -->
+  <path d="M 205 138 A 50 50 0 0 1 185 210" fill="none" stroke="#444" stroke-width="1.2"/>
+  <text x="215" y="185" font-size="14" text-anchor="middle">80°</text>
+</svg>

@@ -1,0 +1,62 @@
+[
+  {
+    "questionText": "Which of the following promotes abscission?",
+    "options": { "A": "Auxin", "B": "gibberellins", "C": "cytokinin", "D": "ethylene" },
+    "correctAnswer": "D",
+    "explanation": "Ethylene (also called ethane) is the hormone that makes fruit ripen and is also responsible for abscission, the shedding of leaves, flowers, or fruit."
+  },
+  {
+    "questionText": "Which type of circulation is present in arthropods and molluscs?",
+    "options": { "A": "double", "B": "single", "C": "open", "D": "close" },
+    "correctAnswer": "C",
+    "explanation": "Arthropods and molluscs have an open circulatory system, where blood is not always confined to vessels."
+  },
+  {
+    "questionText": "Which of the following scientists is credited with the discovery of the theory of evolution through natural selection?",
+    "options": { "A": "Charles Darwin", "B": "Gregor Mendel", "C": "Albert Einstein", "D": "Louis Pasteur" },
+    "correctAnswer": "A",
+    "explanation": "Charles Darwin developed the theory of evolution through natural selection."
+  },
+  {
+    "questionText": "Yellow fever is transmitted by which vector?",
+    "options": { "A": "female anopheles mosquito", "B": "flea", "C": "Aedes mosquito", "D": "Sandfly" },
+    "correctAnswer": "C",
+    "explanation": "Yellow fever is an arboviral disease transmitted by the bite of an infected Aedes aegypti mosquito."
+  },
+  {
+    "questionText": "Which of the following blood groups can have homozygous and heterozygous forms?",
+    "options": { "A": "A and B", "B": "AB and O", "C": "A and AB", "D": "A and O" },
+    "correctAnswer": "A",
+    "explanation": "Blood group A can be AO or AA (homozygous or heterozygous), and blood group B can be BO or BB, so A and B can have both forms."
+  },
+  {
+    "questionText": "The opening of the guard cells of the epidermis in plants is by the process of",
+    "options": { "A": "osmosis", "B": "diffusion", "C": "transpiration", "D": "active transport" },
+    "correctAnswer": "A",
+    "explanation": "The guard cells control the opening and closing of stomata; the turgidity of guard cells that allows the stomata to open is caused by osmosis."
+  },
+  {
+    "questionText": "Biosphere is best described as",
+    "options": { "A": "all part of earth where life exist", "B": "the non-living parts of an ecosystem", "C": "all components of an ecosystem", "D": "all the members of a particular species" },
+    "correctAnswer": "A",
+    "explanation": "The biosphere refers to all parts of the earth where life exists, divided into the lithosphere and atmosphere."
+  },
+  {
+    "questionText": "In plants, the structures that play roles similar to the arteries and veins of animals are the",
+    "options": { "A": "xylem and phloem", "B": "root hairs and xylem", "C": "lenticels and phloem", "D": "roots and stem" },
+    "correctAnswer": "A",
+    "explanation": "Xylem and phloem are used for transport in plants the same way arteries and veins are used in animals."
+  },
+  {
+    "questionText": "A blue-green alga is not a protophyte because",
+    "options": { "A": "it is aquatic", "B": "it cells are prokaryotic", "C": "it cannot move", "D": "is not a green plant" },
+    "correctAnswer": "B",
+    "explanation": "Blue-green algae are prokaryotes, which is why they are not classified as protophytes."
+  },
+  {
+    "questionText": "The most important ecological factor in a terrestrial environment is",
+    "options": { "A": "rainfall", "B": "humidity", "C": "wind", "D": "soil" },
+    "correctAnswer": "A",
+    "explanation": "Rainfall is the most important ecological factor in a terrestrial environment."
+  }
+]

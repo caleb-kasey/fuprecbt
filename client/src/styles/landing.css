@@ -1,0 +1,191 @@
+.landing-page {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background-color: #000;
+  background-image: linear-gradient(rgba(0, 11, 41, 0.7), rgba(0, 11, 41, 0.8)), url('https://fupre.edu.ng/wp-content/uploads/2022/11/img_bg_7-1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-bg-anim {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--primary-faint) 0%, transparent 60%);
+  animation: pulse 15s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.1) translate(2%, 2%); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding-top: 60px;
+}
+
+.hero-icon {
+  width: 80px;
+  height: 80px;
+  color: #ffffff;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #f3f4f6;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.hero-desc {
+  font-size: 1.125rem;
+  color: #e5e7eb;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: var(--text);
+}
+
+.features {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 40px 30px;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.how-it-works {
+  padding: 100px 0;
+  background-color: var(--bg);
+}
+
+.steps-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+}
+
+.step-num {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.step p {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--border);
+  margin: 0 20px;
+  transform: translateY(-20px);
+}
+
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  background-color: var(--bg-secondary);
+}
+
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .steps-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .step-line {
+    width: 2px;
+    height: 50px;
+    margin: 10px 0;
+    transform: none;
+  }
+}

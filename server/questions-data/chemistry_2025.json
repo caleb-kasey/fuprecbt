@@ -1,0 +1,168 @@
+[
+  {
+    "questionText": "The principle of column chromatography is based on the ability of the constituents to",
+    "options": {
+      "A": "react with the solvent in the column",
+      "B": "react with each other in the column",
+      "C": "dissolve with each other in the column",
+      "D": "move at different speeds in the column"
+    },
+    "correctAnswer": "D",
+    "explanation": "Column chromatography separates substances based on different constituent speeds through the column."
+  },
+  {
+    "questionText": "How many lone pairs of electrons are there on the central atom of \\(\\text{H}_2\\text{O}\\)?",
+    "options": {
+      "A": "one",
+      "B": "two",
+      "C": "three",
+      "D": "four"
+    },
+    "correctAnswer": "B",
+    "explanation": "The oxygen atom in water has two lone pairs of electrons."
+  },
+  {
+    "questionText": "What volume of oxygen is present in \\(150\\,\\text{cm}^3\\) of air at \\(27^\\circ\\text{C}\\)? (Air contains 21% oxygen)",
+    "options": {
+      "A": "\\(21\\,\\text{cm}^3\\)",
+      "B": "\\(31.5\\,\\text{cm}^3\\)",
+      "C": "\\(117\\,\\text{cm}^3\\)",
+      "D": "\\(1.5\\,\\text{cm}^3\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Volume of \\(\\text{O}_2=\\dfrac{21}{100}\\times150=31.5\\,\\text{cm}^3\\)"
+  },
+  {
+    "questionText": "How many atoms are in \\(0.8\\,\\text{g}\\) of oxygen molecule? \\([N_A=6.02\\times10^{23}\\,\\text{mol}^{-1},\\;M(\\text{O}_2)=32\\,\\text{g}]\\)",
+    "options": {
+      "A": "\\(1.51\\times10^{22}\\)",
+      "B": "\\(3.01\\times10^{22}\\)",
+      "C": "\\(3.01\\times10^{21}\\)",
+      "D": "\\(1.51\\times10^{21}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Molecules \\(=\\dfrac{0.8}{32}\\times6.02\\times10^{23}=0.1505\\times10^{23}\\). Atoms \\(=2\\times0.1505\\times10^{23}=3.01\\times10^{22}\\)"
+  },
+  {
+    "questionText": "On which of the following is the solubility of a gaseous substance dependent? i. Nature of solvent  ii. Nature of solute  iii. Temperature  iv. Pressure",
+    "options": {
+      "A": "i, ii, iii and iv",
+      "B": "i and ii only",
+      "C": "ii only",
+      "D": "i, iii and iv only"
+    },
+    "correctAnswer": "D",
+    "explanation": "Solubility of a gas depends on nature of solvent, temperature and pressure — not the nature of the solute."
+  },
+  {
+    "questionText": "\\(22.5\\,\\text{g}\\) of \\(\\text{Pb(NO}_3)_2\\) is dissolved in \\(25\\,\\text{g}\\) of water at \\(20^\\circ\\text{C}\\). Find the solubility in \\(\\text{mol\\,dm}^{-3}\\). \\([\\text{Pb}=207,\\text{N}=14,\\text{O}=16]\\)",
+    "options": {
+      "A": "\\(2.720\\)",
+      "B": "\\(3.350\\)",
+      "C": "\\(0.272\\)",
+      "D": "\\(0.335\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(M(\\text{Pb(NO}_3)_2)=331\\,\\text{g/mol}.\\) Solubility \\(=\\dfrac{1000\\times22.5}{331\\times25}=2.72\\,\\text{mol\\,dm}^{-3}\\)"
+  },
+  {
+    "questionText": "Which sample reacts fastest with dilute \\(\\text{HCl}\\)?",
+    "options": {
+      "A": "\\(5\\,\\text{g}\\) lumps of \\(\\text{CaCO}_3\\) at \\(25^\\circ\\text{C}\\)",
+      "B": "\\(5\\,\\text{g}\\) powdered \\(\\text{CaCO}_3\\) at \\(25^\\circ\\text{C}\\)",
+      "C": "\\(5\\,\\text{g}\\) lumps of \\(\\text{CaCO}_3\\) at \\(50^\\circ\\text{C}\\)",
+      "D": "\\(5\\,\\text{g}\\) powdered \\(\\text{CaCO}_3\\) at \\(50^\\circ\\text{C}\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Powdered form has greater surface area; higher temperature increases rate — both favour faster reaction."
+  },
+  {
+    "questionText": "Which equation shows a reaction is in equilibrium?",
+    "options": {
+      "A": "\\(\\Delta G<0\\)",
+      "B": "\\(\\Delta G=\\Delta H-T\\Delta S\\)",
+      "C": "\\(\\Delta G>0\\)",
+      "D": "\\(\\Delta G=0\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "A reaction is at equilibrium when \\(\\Delta G=0\\)."
+  },
+  {
+    "questionText": "\\(\\text{MnO}_4^-+8\\text{H}^++x\\text{e}^-\\rightarrow\\text{Mn}^{2+}+4\\text{H}_2\\text{O}\\). Find \\(x\\).",
+    "options": {
+      "A": "\\(2\\)",
+      "B": "\\(3\\)",
+      "C": "\\(4\\)",
+      "D": "\\(5\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Mn goes from \\(+7\\) to \\(+2\\), a gain of 5 electrons, so \\(x=5\\)."
+  },
+  {
+    "questionText": "How many Faradays are required to produce \\(0.25\\,\\text{mol}\\) of copper? \\([\\text{Cu}^{2+}]\\)",
+    "options": {
+      "A": "\\(0.50\\,\\text{F}\\)",
+      "B": "\\(1.00\\,\\text{F}\\)",
+      "C": "\\(0.01\\,\\text{F}\\)",
+      "D": "\\(0.05\\,\\text{F}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(Q=n\\times c=0.25\\times2=0.5\\,\\text{F}\\)"
+  },
+  {
+    "questionText": "The constituents of air necessary in the rusting process are",
+    "options": {
+      "A": "\\(\\text{O}_2\\) and \\(\\text{H}_2\\text{O}\\)",
+      "B": "Ar and \\(\\text{CO}_2\\)",
+      "C": "\\(\\text{CO}_2\\) and \\(\\text{H}_2\\text{O}\\)",
+      "D": "\\(\\text{O}_2\\) and \\(\\text{CO}_2\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Rusting requires both oxygen (\\(\\text{O}_2\\)) and water (\\(\\text{H}_2\\text{O}\\))."
+  },
+  {
+    "questionText": "The salt formed from a strong acid and a strong base is",
+    "options": {
+      "A": "acidic",
+      "B": "basic",
+      "C": "complex",
+      "D": "neutral"
+    },
+    "correctAnswer": "D",
+    "explanation": "A salt from a strong acid and strong base is neutral."
+  },
+  {
+    "questionText": "Given the compound \\(\\text{CH}_3(\\text{CH}_2)_3\\text{CH}(\\text{C}_3\\text{H}_7)\\text{C}_2\\text{H}_5\\), what is its IUPAC name?",
+    "options": {
+      "A": "5-propylheptane",
+      "B": "3-ethylheptane",
+      "C": "4-ethyloctane",
+      "D": "5-ethyloctane"
+    },
+    "correctAnswer": "C",
+    "explanation": "Based on the longest carbon chain and position of the ethyl substituent, the compound is 4-ethyloctane.",
+    "questionImage": "diagrams/chem_2025_q13.svg"
+  },
+  {
+    "questionText": "The process that converts ethanol to ethanoic acid is",
+    "options": {
+      "A": "combustion",
+      "B": "oxidation",
+      "C": "hydration",
+      "D": "hydrolysis"
+    },
+    "correctAnswer": "B",
+    "explanation": "Oxidation of ethanol (\\(\\text{C}_2\\text{H}_5\\text{OH}\\)) produces ethanoic acid (\\(\\text{CH}_3\\text{COOH}\\))."
+  },
+  {
+    "questionText": "An example of an oxidation-reduction enzyme is",
+    "options": {
+      "A": "amylase",
+      "B": "protase",
+      "C": "lipase",
+      "D": "dehydrogenase"
+    },
+    "correctAnswer": "D",
+    "explanation": "Dehydrogenase is a redox enzyme; amylase, protase, and lipase are hydrolytic enzymes."
+  }
+]

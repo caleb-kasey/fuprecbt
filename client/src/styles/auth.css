@@ -1,0 +1,135 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--bg);
+}
+
+.auth-split {
+  display: flex;
+  width: 100%;
+}
+
+.auth-left {
+  flex: 1;
+  background-color: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.auth-left-content {
+  max-width: 450px;
+  text-align: center;
+}
+
+.auth-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.auth-left h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.auth-left p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper .input {
+  padding-right: 70px;
+}
+
+.pwd-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.pwd-toggle:hover {
+  text-decoration: underline;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.auth-toggle {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.auth-toggle .text-muted {
+  color: var(--text-muted);
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.6s ease;
+}
+
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none;
+  }
+  .auth-form-container {
+    padding: 30px 20px;
+  }
+}

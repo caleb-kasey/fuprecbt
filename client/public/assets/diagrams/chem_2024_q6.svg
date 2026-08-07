@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <defs>
+    <style>text { font-family: Georgia, serif; fill: #222; }</style>
+    <marker id="arrowX" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#444"/>
+    </marker>
+    <marker id="arrowY" markerWidth="10" markerHeight="7"
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <!-- Y axis -->
+  <line x1="60" y1="280" x2="60" y2="20"
+        stroke="#444" stroke-width="2.5"
+        marker-end="url(#arrowY)"/>
+  <!-- X axis -->
+  <line x1="60" y1="280" x2="370" y2="280"
+        stroke="#444" stroke-width="2.5"
+        marker-end="url(#arrowX)"/>
+
+  <!-- Axis labels -->
+  <text x="200" y="310" font-size="16" text-anchor="middle">Temperature</text>
+  <text x="22" y="155" font-size="16" text-anchor="middle"
+        transform="rotate(-90,22,155)">Solubility</text>
+
+  <!--
+    All curves start around x=60 (left of graph) and end around x=340 (right)
+    Y range: 280 (bottom) to 40 (top)
+    
+    Curve A: steep rising (starts low-left, ends very high-right)
+    Curve B: moderate rising
+    Curve C: flat (horizontal)
+    Curve D: decreasing
+  -->
+
+  <!-- Curve A — steep rise -->
+  <path d="M 60,240 C 120,220 200,160 340,40"
+        fill="none" stroke="#333" stroke-width="2.2"/>
+  <text x="348" y="38" font-size="16">A</text>
+
+  <!-- Curve B — moderate rise -->
+  <path d="M 60,220 C 150,200 240,170 340,90"
+        fill="none" stroke="#333" stroke-width="2.2"/>
+  <text x="348" y="90" font-size="16">B</text>
+
+  <!-- Curve C — flat (horizontal) -->
+  <path d="M 60,140 L 340,140"
+        fill="none" stroke="#333" stroke-width="2.2"/>
+  <text x="348" y="144" font-size="16">C</text>
+
+  <!-- Curve D — decreasing -->
+  <path d="M 60,120 C 150,150 240,190 340,220"
+        fill="none" stroke="#333" stroke-width="2.2"/>
+  <text x="348" y="222" font-size="16">D</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Circle -->
+  <circle cx="150" cy="150" r="120" fill="white" stroke="#333" stroke-width="2"/>
+
+  <!-- Center lines dividing into sectors -->
+  <!-- Right angle sector (90°): from center going up and going right -->
+  <line x1="150" y1="150" x2="150" y2="30" stroke="#333" stroke-width="2"/>
+  <line x1="150" y1="150" x2="270" y2="150" stroke="#333" stroke-width="2"/>
+  <!-- x° sector: diagonal from center to top-left -->
+  <line x1="150" y1="150" x2="65" y2="65" stroke="#333" stroke-width="2"/>
+  <!-- 6x° sector: diagonal from center to bottom-right -->
+  <line x1="150" y1="150" x2="235" y2="235" stroke="#333" stroke-width="2"/>
+
+  <!-- Right angle box at center -->
+  <rect x="150" y="138" width="12" height="12" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Sector labels -->
+  <!-- A sector: top right (90° sector) -->
+  <text x="210" y="100" font-family="serif" font-size="18" fill="#333" text-anchor="middle">A</text>
+  <!-- B sector: top left -->
+  <text x="100" y="85" font-family="serif" font-size="18" fill="#333" text-anchor="middle">B</text>
+  <!-- C sector: left -->
+  <text x="65" y="160" font-family="serif" font-size="18" fill="#333" text-anchor="middle">C</text>
+  <!-- D sector: bottom -->
+  <text x="190" y="240" font-family="serif" font-size="18" fill="#333" text-anchor="middle">D</text>
+
+  <!-- Angle labels near center -->
+  <text x="162" y="145" font-family="serif" font-size="13" fill="#333">x°</text>
+  <text x="155" y="170" font-family="serif" font-size="13" fill="#333">6x°</text>
+
+  <!-- Small arc for x° angle (between vertical and diagonal) -->
+  <path d="M 150 130 A 20 20 0 0 0 136 136" fill="none" stroke="#333" stroke-width="1.2"/>
+  <!-- Small arc for 6x° angle (between diagonal and horizontal bottom) -->
+  <path d="M 150 165 A 15 15 0 0 0 163 158" fill="none" stroke="#333" stroke-width="1.2"/>
+</svg>

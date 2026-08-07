@@ -1,0 +1,62 @@
+[
+  {
+    "questionText": "Growth in animals differs from that in plants because growth in animals is",
+    "options": { "A": "apical", "B": "intercalary", "C": "from within", "D": "indefinite" },
+    "correctAnswer": "C",
+    "explanation": "Growth is apical in plants and intercalary in animals. In animals, growth ceases after maturity whereas in plants, growth continues indefinitely."
+  },
+  {
+    "questionText": "Which of the following hormones is wrongly paired with its secretory organ?",
+    "options": { "A": "Insulin and pancreas", "B": "Oestrogen and ovary", "C": "Oxytocin and hypothalamus", "D": "Adrenalin and kidney" },
+    "correctAnswer": "D",
+    "explanation": "Adrenalin is secreted by adrenal glands, not the kidneys. The adrenal glands are located at the top of the kidneys."
+  },
+  {
+    "questionText": "The eye defect caused by an uneven curvature of the cornea or lens (or both) is",
+    "options": { "A": "myopia", "B": "astigmatism", "C": "presbyopia", "D": "hypermetropia" },
+    "correctAnswer": "B",
+    "explanation": "Astigmatism is the eye defect caused by an uneven curvature of the cornea or lens (or both). It is corrected by wearing cylindrical lenses."
+  },
+  {
+    "questionText": "The androecium in a flowering plant is a collection of",
+    "options": { "A": "ovules", "B": "stamens", "C": "filaments", "D": "sperms" },
+    "correctAnswer": "B",
+    "explanation": "The androecium is a collection of stamens. Each stamen comprises the anther and the filament."
+  },
+  {
+    "questionText": "Placentation in fruits is referred to as the part of the ovary where the ovules originate and remain till maturity. Which type involves formation of a single carpel joined at the two edges of an ovule?",
+    "options": { "A": "formation of a single carpel joined at two edges of an ovule", "B": "formation of a single ovule", "C": "arrangement of ovules in a central column of a flower", "D": "ovules borne on a central column of tissues in an ovary" },
+    "correctAnswer": "C",
+    "explanation": "In fruits, placentation refers to the arrangement of ovules in the ovary of a flower. Placentation may be axile, marginal, parietal, free-central, superficial or basal."
+  },
+  {
+    "questionText": "Which of the following processes does NOT occur during photosynthesis?",
+    "options": { "A": "carbon (V) oxide is evolved", "B": "water is split", "C": "oxygen is evolved", "D": "energy from sunlight is absorbed" },
+    "correctAnswer": "A",
+    "explanation": "Carbon (IV) oxide is not evolved during photosynthesis. Instead, it is a main raw material. The gas evolved is oxygen."
+  },
+  {
+    "questionText": "Stunted growth and small yellow leaves in plants are symptoms of the deficiencies of",
+    "options": { "A": "sulphur", "B": "iron", "C": "magnesium", "D": "nitrogen" },
+    "correctAnswer": "D",
+    "explanation": "Slow growth and uniform yellowing of older leaves are the first symptoms of nitrogen deficiency. Nitrogen-deficient plants produce smaller than normal fruits, leaves and shoots."
+  },
+  {
+    "questionText": "The structure whose action could result in choking when talking and eating at the same time is",
+    "options": { "A": "epiglottis", "B": "oesophagus", "C": "liver", "D": "stomach" },
+    "correctAnswer": "A",
+    "explanation": "When a person swallows, the epiglottis folds backward to cover the entrance of the larynx so food and liquid do not enter the windpipe and lungs. Talking and eating at the same time may cause choking."
+  },
+  {
+    "questionText": "The food substance that would produce the highest amount of energy is",
+    "options": { "A": "glucose", "B": "fat", "C": "amino acid", "D": "protein" },
+    "correctAnswer": "B",
+    "explanation": "Fats and oils contain the highest amount of energy; carbohydrates only come second."
+  },
+  {
+    "questionText": "Organisms that feed on dead, decaying tissues of other organisms are known as",
+    "options": { "A": "parasites", "B": "autotrophs", "C": "heterotrophs", "D": "saprophytes" },
+    "correctAnswer": "D",
+    "explanation": "Saprophytes are the organisms that live and feed on dead and decaying organisms. They are usually bacteria and fungi such as molds, mushroom, yeast, penicillium and mucor."
+  }
+]

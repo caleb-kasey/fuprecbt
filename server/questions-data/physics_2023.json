@@ -1,0 +1,168 @@
+[
+  {
+    "questionText": "Which of the following is a scalar quantity?",
+    "options": {
+      "A": "momentum",
+      "B": "potential energy",
+      "C": "moment D",
+      "D": "acceleration due to gravity"
+    },
+    "correctAnswer": "B",
+    "explanation": "Potential energy is a scalar quantity. Momentum, moment, and acceleration due to gravity are vectors."
+  },
+  {
+    "questionText": "A body moving at \\(20\\,\\text{ms}^{-1}\\) decelerates uniformly at \\(5\\,\\text{ms}^{-2}\\) till its speed becomes \\(10\\,\\text{ms}^{-1}\\). The distance covered within this period is",
+    "options": {
+      "A": "\\(30\\,\\text{m}\\)",
+      "B": "\\(20\\,\\text{m}\\)",
+      "C": "\\(50\\,\\text{m}\\)",
+      "D": "\\(60\\,\\text{m}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Using \\(v^2-u^2=2as\\): \\(s=\\dfrac{v^2-u^2}{2a}=\\dfrac{20^2-10^2}{2\\times5}=\\dfrac{300}{10}=30\\,\\text{m}\\)."
+  },
+  {
+    "questionText": "A car of mass \\(15000\\,\\text{kg}\\) moves round a circular track of radius \\(50\\,\\text{m}\\) at a speed of \\(10\\,\\text{ms}^{-1}\\). The magnitude of the centripetal force is",
+    "options": {
+      "A": "\\(3.0\\times10^4\\,\\text{N}\\)",
+      "B": "\\(5\\times10^4\\,\\text{N}\\)",
+      "C": "\\(1.5\\times10^5\\,\\text{N}\\)",
+      "D": "\\(1.5\\times10^6\\,\\text{N}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(F=\\dfrac{mv^2}{r}=\\dfrac{15000\\times100}{50}=\\dfrac{1500000}{50}=3.0\\times10^4\\,\\text{N}\\)."
+  },
+  {
+    "questionText": "The height at which kinetic energy (K.E) equals potential energy (P.E) can be obtained by",
+    "options": {
+      "A": "\\(h=\\dfrac{mu^2}{2mg}\\)",
+      "B": "\\(h=\\dfrac{u^2}{4g}\\)",
+      "C": "\\(h=\\dfrac{2u^2}{4g}\\)",
+      "D": "\\(h=\\dfrac{u^2}{2g}\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "At K.E = P.E: \\(\\dfrac{1}{2}mu^2=mgh\\Rightarrow h=\\dfrac{u^2}{2g}\\)."
+  },
+  {
+    "questionText": "A machine is used to lift a load of 20N through a height of 10m. If the efficiency of the machine is 40%, how much work is done?",
+    "options": {
+      "A": "80J",
+      "B": "500J",
+      "C": "300J",
+      "D": "120J"
+    },
+    "correctAnswer": "B",
+    "explanation": "Work output \\(=20\\times10=200\\text{J}\\). Efficiency \\(=\\dfrac{200}{\\text{Work input}}\\times100=40\\Rightarrow\\text{Work input}=\\dfrac{200\\times100}{40}=500\\text{J}\\)."
+  },
+  {
+    "questionText": "Tyres are threaded to",
+    "options": {
+      "A": "reduce friction",
+      "B": "increase friction",
+      "C": "look good",
+      "D": "prevent accident"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tyres are threaded to enhance gripping and increase friction, improving safety and control."
+  },
+  {
+    "questionText": "How much heat is absorbed when a block of copper of mass \\(0.05\\,\\text{kg}\\) and specific heat capacity \\(390\\,\\text{Jkg}^{-1}\\text{k}^{-1}\\) is heated from \\(20^\\circ\\text{C}\\) to \\(70^\\circ\\text{C}\\)?",
+    "options": {
+      "A": "\\(975\\,\\text{J}\\)",
+      "B": "\\(675\\,\\text{J}\\)",
+      "C": "\\(825\\,\\text{J}\\)",
+      "D": "\\(117\\,\\text{J}\\)"
+    },
+    "correctAnswer": "A",
+    "explanation": "\\(Q=mc\\theta=0.05\\times390\\times50=975\\,\\text{J}\\)."
+  },
+  {
+    "questionText": "A metal rod 800mm long is heated from \\(10^\\circ\\text{C}\\) to \\(95^\\circ\\text{C}\\). If it expands by 1.36mm, the linear expansivity of the metal is",
+    "options": {
+      "A": "\\(20\\times10^{-5}\\,\\text{k}^{-1}\\)",
+      "B": "\\(2.0\\times10^{-5}\\,\\text{k}^{-1}\\)",
+      "C": "\\(5.0\\times10^{-3}\\,\\text{k}^{-1}\\)",
+      "D": "\\(2.0\\times10^{-2}\\,\\text{k}^{-1}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "\\(\\alpha=\\dfrac{\\Delta l}{l_0\\Delta\\theta}=\\dfrac{1.36}{800\\times85}=\\dfrac{1.36}{68000}=2\\times10^{-5}\\,\\text{k}^{-1}\\)."
+  },
+  {
+    "questionText": "Which of the following properties make the convex mirror useful as a driving mirror? I. The image is real  II. The image is erect  III. It has a wide field of view  IV. The image is magnified",
+    "options": {
+      "A": "I and II",
+      "B": "I, II and III",
+      "C": "II and III",
+      "D": "I"
+    },
+    "correctAnswer": "C",
+    "explanation": "A convex mirror is used as a driving mirror because the image formed is erect, virtual and diminished, and it has a wide field of view."
+  },
+  {
+    "questionText": "Dispersion of light occurs when light passes through a glass prism because of the",
+    "options": {
+      "A": "defects in the glass",
+      "B": "high density of the glass",
+      "C": "different hidden colours",
+      "D": "different speeds of the colours in the glass"
+    },
+    "correctAnswer": "D",
+    "explanation": "Dispersion occurs because different colours (wavelengths) of white light travel through the component colours of the rainbow (ROYGBIV) at different speeds through the glass."
+  },
+  {
+    "questionText": "Which of the following remains unchanged when light travels from one medium to another?",
+    "options": {
+      "A": "frequency",
+      "B": "velocity",
+      "C": "wave light",
+      "D": "none"
+    },
+    "correctAnswer": "A",
+    "explanation": "From the formula \\(V=f\\lambda\\), frequency is a parameter that remains constant/unchanged when light moves from one medium to another."
+  },
+  {
+    "questionText": "Three capacitors each of \\(6\\,\\mu\\text{F}\\) are connected in series. The equivalent capacitance is",
+    "options": {
+      "A": "\\(1\\,\\mu\\text{F}\\)",
+      "B": "\\(2\\,\\mu\\text{F}\\)",
+      "C": "\\(3\\,\\mu\\text{F}\\)",
+      "D": "\\(4\\,\\mu\\text{F}\\)"
+    },
+    "correctAnswer": "B",
+    "explanation": "When capacitors are in series, equivalent capacitance \\(=\\dfrac{C}{n}=\\dfrac{6}{3}=2\\,\\mu\\text{F}\\).",
+    "questionImage": "diagrams/phys_2023_q12.svg"
+  },
+  {
+    "questionText": "An electric charge of \\(0.05\\,\\text{C}\\) moves with a speed of \\(2\\,\\text{ms}^{-1}\\) at right angles to a uniform magnetic field of flux density \\(0.04\\,\\text{T}\\). Calculate the magnitude of the magnetic force acting on the charge.",
+    "options": {
+      "A": "\\(0.000\\,\\text{N}\\)",
+      "B": "\\(0.001\\,\\text{N}\\)",
+      "C": "\\(0.004\\,\\text{N}\\)",
+      "D": "\\(1.600\\,\\text{N}\\)"
+    },
+    "correctAnswer": "C",
+    "explanation": "\\(F=qvB\\sin\\theta=0.05\\times2\\times0.04\\times\\sin90^\\circ=0.004\\,\\text{N}\\)."
+  },
+  {
+    "questionText": "A radioactive substance has a half-life of 20 days. What fraction of the original radioactive nuclei will remain after 80 days?",
+    "options": {
+      "A": "\\(\\dfrac{1}{2}\\)",
+      "B": "\\(\\dfrac{3}{4}\\)",
+      "C": "\\(\\dfrac{1}{4}\\)",
+      "D": "\\(\\dfrac{1}{16}\\)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Number of half-lives \\(=\\dfrac{80}{20}=4\\). Fraction remaining \\(=\\left(\\dfrac{1}{2}\\right)^4=\\dfrac{1}{16}\\)."
+  },
+  {
+    "questionText": "A light of energy \\(5\\,\\text{eV}\\) falls on a metal and the electrons with a maximum kinetic energy of \\(2\\,\\text{eV}\\) are ejected. The work function of the metal is",
+    "options": {
+      "A": "\\(0.4\\,\\text{eV}\\)",
+      "B": "\\(2.5\\,\\text{eV}\\)",
+      "C": "\\(3.0\\,\\text{eV}\\)",
+      "D": "\\(7.0\\,\\text{eV}\\)"
+    },
+    "correctAnswer": "C",
+    "explanation": "\\(W_\\circ=Q-K.E_{\\max}=5\\,\\text{eV}-2\\,\\text{eV}=3\\,\\text{eV}\\)."
+  }
+]
