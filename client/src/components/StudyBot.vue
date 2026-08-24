@@ -1,3 +1,36 @@
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+  results: {
+    type: Array,
+    default: () => [],
+  },
+});
+
+const botMessage = computed(() => {
+  if (!props.results || props.results.length === 0) {
+    return "Welcome! Take your first exam to begin your journey. 💪";
+  }
+
+  const totalScore = props.results.reduce(
+    (acc, r) => acc + (r.passed / r.totalQuestions) * 100,
+    0
+  );
+  const avg = totalScore / props.results.length;
+
+  if (avg < 40) {
+    return "Keep going! Every expert was once a beginner. Practice daily! 📖";
+  } else if (avg >= 40 && avg < 60) {
+    return "Good effort! Push a little harder and watch your scores rise! 🚀";
+  } else if (avg >= 60 && avg < 80) {
+    return "Great work! Stay consistent and you will master this! ⭐";
+  } else {
+    return "Outstanding! You are well prepared for your Post-UTME! 🏆";
+  }
+});
+</script>
+
 <template>
   <div class="study-bot card">
     <div class="bot-avatar">
@@ -11,36 +44,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { computed } from 'vue'
-
-const props = defineProps({
-  results: {
-    type: Array,
-    default: () => []
-  }
-})
-
-const botMessage = computed(() => {
-  if (!props.results || props.results.length === 0) {
-    return "Welcome! Take your first exam to begin your journey. 💪"
-  }
-  
-  const totalScore = props.results.reduce((acc, r) => acc + (r.passed / r.totalQuestions) * 100, 0)
-  const avg = totalScore / props.results.length
-
-  if (avg < 40) {
-    return "Keep going! Every expert was once a beginner. Practice daily! 📖"
-  } else if (avg >= 40 && avg < 60) {
-    return "Good effort! Push a little harder and watch your scores rise! 🚀"
-  } else if (avg >= 60 && avg < 80) {
-    return "Great work! Stay consistent and you will master this! ⭐"
-  } else {
-    return "Outstanding! You are well prepared for your Post-UTME! 🏆"
-  }
-})
-</script>
 
 <style scoped>
 .study-bot {

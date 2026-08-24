@@ -1,35 +1,34 @@
-const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
-const dotenv = require('dotenv');
-
-// Load environment variables from server root
-dotenv.config({ path: path.join(__dirname, '..', '.env') });
-
+const mongoose = require('mongoose');
+const env = require('../config/env');
 const Question = require('../models/Question');
 
 const QUESTIONS_DIR = path.join(__dirname, '..', 'questions-data');
+const VALID_SUBJECTS = ['english', 'mathematics', 'physics', 'chemistry', 'biology'];
+const VALID_YEARS = [2023, 2024, 2025];
 
 const seedQuestions = async () => {
   try {
-    // Connect to MongoDB
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(env.MONGO_URI);
     console.log('✅ Connected to MongoDB for seeding\n');
 
-    // Read all JSON files from questions-data folder
+    if (!fs.existsSync(QUESTIONS_DIR)) {
+      console.error('❌ questions-data directory does not exist.');
+      process.exit(1);
+    }
+
     const files = fs.readdirSync(QUESTIONS_DIR).filter((file) => file.endsWith('.json'));
 
     if (files.length === 0) {
       console.log('⚠️  No JSON files found in questions-data/ folder.');
-      console.log('   Expected format: subject_year.json (e.g. mathematics_2023.json)');
       process.exit(0);
     }
 
     let totalInserted = 0;
 
     for (const file of files) {
-      // Extract subject and year from filename: mathematics_2023.json
-      const baseName = path.basename(file, '.json'); // "mathematics_2023"
+      const baseName = path.basename(file, '.json');
       const parts = baseName.split('_');
 
       if (parts.length < 2) {
@@ -37,23 +36,19 @@ const seedQuestions = async () => {
         continue;
       }
 
-      const subject = parts.slice(0, -1).join('_').toLowerCase(); // handles multi-word if needed
+      const subject = parts.slice(0, -1).join('_').toLowerCase();
       const year = parseInt(parts[parts.length - 1], 10);
 
-      // Validate subject
-      const validSubjects = ['english', 'mathematics', 'physics', 'chemistry', 'biology'];
-      if (!validSubjects.includes(subject)) {
+      if (!VALID_SUBJECTS.includes(subject)) {
         console.log(`⚠️  Skipping "${file}" — invalid subject "${subject}"`);
         continue;
       }
 
-      // Validate year
-      if (![2023, 2024, 2025].includes(year)) {
+      if (!VALID_YEARS.includes(year)) {
         console.log(`⚠️  Skipping "${file}" — invalid year "${year}"`);
         continue;
       }
 
-      // Read and parse JSON file
       const filePath = path.join(QUESTIONS_DIR, file);
       const rawData = fs.readFileSync(filePath, 'utf-8');
       let questions;
@@ -74,7 +69,6 @@ const seedQuestions = async () => {
       let skippedCount = 0;
 
       for (const q of questions) {
-        // Check for duplicate by subject + year + questionText
         const exists = await Question.findOne({
           subject,
           year,
@@ -86,7 +80,6 @@ const seedQuestions = async () => {
           continue;
         }
 
-        // Insert with subject and year added
         await Question.create({
           subject,
           year,

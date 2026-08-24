@@ -1,6 +1,6 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
-const defaultState = {
+const getDefaultState = () => ({
   questions: [],
   currentIndex: 0,
   answers: {},
@@ -9,65 +9,79 @@ const defaultState = {
   timeRemaining: 0,
   examStarted: false,
   examSubmitted: false,
-  result: null
-}
+  result: null,
+});
 
-const savedState = localStorage.getItem('examState')
-const initialState = savedState ? JSON.parse(savedState) : defaultState
+const loadInitialState = () => {
+  try {
+    const savedState = localStorage.getItem('examState');
+    if (savedState) {
+      return JSON.parse(savedState);
+    }
+  } catch (error) {
+    console.error('Failed to load stored exam state:', error);
+  }
+  return getDefaultState();
+};
 
 export const useExamStore = defineStore('exam', {
-  state: () => initialState,
+  state: () => loadInitialState(),
+
   getters: {
-    currentQuestion: (state) => state.questions[state.currentIndex],
+    currentQuestion: (state) => state.questions[state.currentIndex] || null,
     totalQuestions: (state) => state.questions.length,
     answeredCount: (state) => Object.keys(state.answers).length,
     progressPercent: (state) => {
-      if (state.questions.length === 0) return 0
-      return (Object.keys(state.answers).length / state.questions.length) * 100
+      if (state.questions.length === 0) return 0;
+      return (Object.keys(state.answers).length / state.questions.length) * 100;
     },
-    timeAllowed: (state) => state.questions.length * 1.5 * 60
+    timeAllowed: (state) => state.questions.length * 1.5 * 60,
   },
+
   actions: {
-    setQuestions(q) {
-      this.questions = q
-      this.timeRemaining = this.timeAllowed
+    setQuestions(questions) {
+      this.questions = questions || [];
+      this.timeRemaining = this.timeAllowed;
     },
+
     setAnswer(questionId, answer) {
-      this.answers[questionId] = answer
+      this.answers[questionId] = answer;
     },
+
     nextQuestion() {
       if (this.currentIndex < this.questions.length - 1) {
-        this.currentIndex++
+        this.currentIndex++;
       }
     },
+
     prevQuestion() {
       if (this.currentIndex > 0) {
-        this.currentIndex--
+        this.currentIndex--;
       }
     },
+
     goToQuestion(index) {
       if (index >= 0 && index < this.questions.length) {
-        this.currentIndex = index
+        this.currentIndex = index;
       }
     },
+
     setSubjects(subjects) {
-      this.selectedSubjects = subjects
+      this.selectedSubjects = subjects;
     },
+
     setYear(year) {
-      this.selectedYear = year
+      this.selectedYear = year;
     },
+
     setResult(result) {
-      this.result = result
+      this.result = result;
     },
+
     resetExam() {
-      this.questions = []
-      this.currentIndex = 0
-      this.answers = {}
-      this.timeRemaining = 0
-      this.examStarted = false
-      this.examSubmitted = false
-      this.result = null
-      localStorage.removeItem('examState')
-    }
-  }
-})
+      const defaultState = getDefaultState();
+      Object.assign(this, defaultState);
+      localStorage.removeItem('examState');
+    },
+  },
+});

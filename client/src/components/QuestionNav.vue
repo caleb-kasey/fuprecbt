@@ -1,12 +1,38 @@
+<script setup>
+const props = defineProps({
+  questions: {
+    type: Array,
+    required: true,
+  },
+  answers: {
+    type: Object,
+    required: true,
+  },
+  currentIndex: {
+    type: Number,
+    required: true,
+  },
+});
+
+defineEmits(['navigate']);
+
+const getStatusClass = (index) => {
+  const qId = props.questions[index]?._id;
+  if (props.answers[qId]) return 'answered';
+  if (index === props.currentIndex) return 'visited';
+  return 'not-visited';
+};
+</script>
+
 <template>
   <div class="question-nav">
     <div class="nav-header">
       <h3>Questions</h3>
     </div>
-    
+
     <div class="nav-grid">
-      <button 
-        v-for="(q, index) in questions" 
+      <button
+        v-for="(q, index) in questions"
         :key="q?._id || index"
         :class="['nav-btn', getStatusClass(index), { active: index === currentIndex }]"
         @click="$emit('navigate', index)"
@@ -28,36 +54,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-const props = defineProps({
-  questions: {
-    type: Array,
-    required: true
-  },
-  answers: {
-    type: Object,
-    required: true
-  },
-  currentIndex: {
-    type: Number,
-    required: true
-  }
-})
-
-defineEmits(['navigate'])
-
-// A question is answered if its ID is in answers
-// A question is visited if we track it. For simplicity, we just use current as visited if not answered.
-// In a real app we might track visited set in store. We will approximate here.
-
-const getStatusClass = (index) => {
-  const qId = props.questions[index]?._id
-  if (props.answers[qId]) return 'answered'
-  if (index === props.currentIndex) return 'visited'
-  return 'not-visited'
-}
-</script>
 
 <style scoped>
 .question-nav {

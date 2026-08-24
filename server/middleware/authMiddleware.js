@@ -1,22 +1,37 @@
 const jwt = require('jsonwebtoken');
+const env = require('../config/env');
 
+/**
+ * Authentication Middleware
+ * Protects routes by validating JWT Bearer tokens
+ */
 const authMiddleware = (req, res, next) => {
   try {
-    // Get token from Authorization header
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      return res.status(401).json({ message: 'Access denied. No token provided.' });
+      return res.status(401).json({
+        success: false,
+        message: 'Access denied. No token provided.',
+      });
     }
 
     const token = authHeader.split(' ')[1];
+    if (!token) {
+      return res.status(401).json({
+        success: false,
+        message: 'Access denied. Malformed token.',
+      });
+    }
 
-    // Verify token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, env.JWT_SECRET);
     req.user = decoded; // { userId, name, iat, exp }
     next();
   } catch (error) {
-    return res.status(401).json({ message: 'Invalid or expired token.' });
+    return res.status(401).json({
+      success: false,
+      message: 'Invalid or expired token. Please sign in again.',
+    });
   }
 };
 

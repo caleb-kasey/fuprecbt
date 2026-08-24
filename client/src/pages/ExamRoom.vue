@@ -1,3 +1,84 @@
+<script setup>
+import { ref, computed, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+import { useExamStore } from '../stores/exam';
+import { useAuthStore } from '../stores/auth';
+import * as api from '../services/api';
+import Timer from '../components/Timer.vue';
+import QuestionNav from '../components/QuestionNav.vue';
+import Calculator from '../components/Calculator.vue';
+import MathText from '../components/MathText.vue';
+import '../styles/examroom.css';
+
+const router = useRouter();
+const examStore = useExamStore();
+const authStore = useAuthStore();
+
+const showMobileNav = ref(false);
+const showSubmitModal = ref(false);
+const isPassageOpen = ref(true);
+const submitting = ref(false);
+
+onMounted(() => {
+  if (!examStore.examStarted || examStore.questions.length === 0) {
+    router.push('/exam-setup');
+  }
+});
+
+const currentQuestion = computed(() => examStore.currentQuestion);
+const totalQuestions = computed(() => examStore.totalQuestions);
+const progressPercent = computed(() => examStore.progressPercent);
+
+const currentSubjectName = computed(() => {
+  if (!currentQuestion.value || !currentQuestion.value.subject) return '';
+  const sub = currentQuestion.value.subject;
+  return sub.charAt(0).toUpperCase() + sub.slice(1);
+});
+
+const selectOption = (key) => {
+  examStore.setAnswer(currentQuestion.value._id, key);
+};
+
+const handleMobileNavigate = (index) => {
+  examStore.goToQuestion(index);
+  showMobileNav.value = false;
+};
+
+const confirmSubmit = () => {
+  showSubmitModal.value = true;
+};
+
+const submitExam = async () => {
+  submitting.value = true;
+  try {
+    const formattedAnswers = examStore.questions.map((q) => ({
+      questionId: q._id,
+      selectedAnswer: examStore.answers[q._id] || null,
+    }));
+
+    const res = await api.submitExam(
+      formattedAnswers,
+      examStore.selectedSubjects,
+      examStore.selectedYear
+    );
+    examStore.setResult(res.data.result);
+    examStore.examSubmitted = true;
+    router.push('/results');
+  } catch (error) {
+    console.error('Submit failed', error);
+    alert(error.message || 'Failed to submit exam. Please try again.');
+    submitting.value = false;
+    showSubmitModal.value = false;
+  }
+};
+
+const autoSubmit = () => {
+  if (!examStore.examSubmitted) {
+    submitExam();
+  }
+};
+</script>
+
 <template>
   <div class="exam-room">
     <!-- Top Bar -->
@@ -9,13 +90,13 @@
         </div>
       </div>
       <div class="header-right">
-        <Timer 
-          v-if="examStore.timeAllowed" 
-          :totalSeconds="examStore.timeAllowed" 
-          @timeout="autoSubmit" 
+        <Timer
+          v-if="examStore.timeAllowed"
+          :totalSeconds="examStore.timeAllowed"
+          @timeout="autoSubmit"
         />
       </div>
-      
+
       <!-- Progress Bar -->
       <div class="progress-bar-container">
         <div class="progress-bar-fill" :style="{ width: progressPercent + '%' }"></div>
@@ -25,9 +106,9 @@
     <div class="exam-content container">
       <!-- Left: Navigation (Desktop) -->
       <aside class="exam-nav desktop-only">
-        <QuestionNav 
-          :questions="examStore.questions" 
-          :answers="examStore.answers" 
+        <QuestionNav
+          :questions="examStore.questions"
+          :answers="examStore.answers"
           :currentIndex="examStore.currentIndex"
           @navigate="examStore.goToQuestion"
         />
@@ -66,8 +147,8 @@
 
           <!-- Options -->
           <div class="options-list">
-            <button 
-              v-for="(text, key) in currentQuestion.options" 
+            <button
+              v-for="(text, key) in currentQuestion.options"
               :key="key"
               :class="['option-btn', { selected: examStore.answers[currentQuestion._id] === key }]"
               @click="selectOption(key)"
@@ -83,15 +164,15 @@
         <!-- Controls -->
         <div class="exam-controls">
           <div class="nav-controls">
-            <button 
-              class="btn btn-outline" 
+            <button
+              class="btn btn-outline"
               :disabled="examStore.currentIndex === 0"
               @click="examStore.prevQuestion"
             >
               &larr; Previous
             </button>
-            <button 
-              class="btn btn-outline" 
+            <button
+              class="btn btn-outline"
               :disabled="examStore.currentIndex === totalQuestions - 1"
               @click="examStore.nextQuestion"
             >
@@ -116,11 +197,11 @@
         <div class="modal-content" @click.stop>
           <div class="modal-header">
             <h3>Question Navigator</h3>
-            <button class="close-btn" @click="showMobileNav = false">✕</button>
+            <button class="close-btn" @click="showMobileNav = false" aria-label="Close Navigator">✕</button>
           </div>
-          <QuestionNav 
-            :questions="examStore.questions" 
-            :answers="examStore.answers" 
+          <QuestionNav
+            :questions="examStore.questions"
+            :answers="examStore.answers"
             :currentIndex="examStore.currentIndex"
             @navigate="handleMobileNavigate"
           />
@@ -137,7 +218,7 @@
             You have answered <strong>{{ examStore.answeredCount }}</strong> out of <strong>{{ totalQuestions }}</strong> questions.
           </p>
           <p class="text-muted">Once submitted, you cannot change your answers.</p>
-          
+
           <div v-if="submitting" class="submitting-state">
             <span class="spinner"></span> Grading exam...
           </div>
@@ -148,89 +229,5 @@
         </div>
       </div>
     </transition>
-
   </div>
 </template>
-
-<script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import { useExamStore } from '../stores/exam'
-import { useAuthStore } from '../stores/auth'
-import * as api from '../services/api'
-import Timer from '../components/Timer.vue'
-import QuestionNav from '../components/QuestionNav.vue'
-import Calculator from '../components/Calculator.vue'
-import MathText from '../components/MathText.vue'
-import '../styles/examroom.css'
-
-const router = useRouter()
-const examStore = useExamStore()
-const authStore = useAuthStore()
-
-const showMobileNav = ref(false)
-const showSubmitModal = ref(false)
-const isPassageOpen = ref(true)
-const submitting = ref(false)
-
-onMounted(() => {
-  if (!examStore.examStarted || examStore.questions.length === 0) {
-    router.push('/exam-setup')
-  }
-})
-
-const currentQuestion = computed(() => examStore.currentQuestion)
-const totalQuestions = computed(() => examStore.totalQuestions)
-const progressPercent = computed(() => examStore.progressPercent)
-
-const currentSubjectName = computed(() => {
-  if (!currentQuestion.value || !currentQuestion.value.subject) return ''
-  const sub = currentQuestion.value.subject
-  return sub.charAt(0).toUpperCase() + sub.slice(1)
-})
-
-const selectOption = (key) => {
-  examStore.setAnswer(currentQuestion.value._id, key)
-}
-
-const handleMobileNavigate = (index) => {
-  examStore.goToQuestion(index)
-  showMobileNav.value = false
-}
-
-const confirmSubmit = () => {
-  showSubmitModal.value = true
-}
-
-const autoSubmit = () => {
-  if (!examStore.examSubmitted) {
-    submitExam()
-  }
-}
-
-const submitExam = async () => {
-  submitting.value = true
-  try {
-    // Format answers from object to array of { questionId, selectedAnswer }
-    // including unanswered questions as null
-    const formattedAnswers = examStore.questions.map(q => ({
-      questionId: q._id,
-      selectedAnswer: examStore.answers[q._id] || null
-    }))
-
-    const res = await api.submitExam(
-      formattedAnswers, 
-      examStore.selectedSubjects, 
-      examStore.selectedYear
-    )
-    examStore.setResult(res.data.result)
-    examStore.examSubmitted = true
-    router.push('/results')
-  } catch (error) {
-    console.error("Submit failed", error)
-    alert("Failed to submit exam. Please try again.")
-    submitting.value = false
-    showSubmitModal.value = false
-  }
-}
-</script>

@@ -1,7 +1,66 @@
+<script setup>
+import { computed, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+import { useExamStore } from '../stores/exam';
+import '../styles/results.css';
+
+const router = useRouter();
+const examStore = useExamStore();
+
+const result = computed(() => examStore.result);
+
+onMounted(() => {
+  if (!result.value) {
+    router.push('/dashboard');
+  }
+});
+
+const percentage = computed(() => {
+  if (!result.value) return 0;
+  return Math.round((result.value.passed / result.value.totalQuestions) * 100);
+});
+
+const headerEmoji = computed(() => {
+  if (percentage.value >= 70) return '🎉';
+  if (percentage.value >= 50) return '💪';
+  return '📚';
+});
+
+const headerMessage = computed(() => {
+  if (percentage.value >= 70) return 'Excellent Performance!';
+  if (percentage.value >= 50) return 'Good Effort!';
+  return 'Keep Practicing!';
+});
+
+const dashOffset = computed(() => {
+  const fraction = percentage.value / 100;
+  const circumference = 2 * Math.PI * 45;
+  return circumference * (1 - fraction);
+});
+
+const scoreColor = computed(() => {
+  if (percentage.value >= 70) return '#27ae60';
+  if (percentage.value >= 50) return '#f39c12';
+  return '#e74c3c';
+});
+
+const getGrade = (score, total) => {
+  const pct = (score / total) * 100;
+  if (pct >= 70) return 'A';
+  if (pct >= 60) return 'B';
+  if (pct >= 50) return 'C';
+  return 'F';
+};
+
+const getSubjectRowClass = (score, total) => {
+  const pct = (score / total) * 100;
+  return pct >= 50 ? 'row-pass' : 'row-fail';
+};
+</script>
+
 <template>
   <div class="page-pad results-page">
     <div class="container" v-if="result">
-      
       <!-- Confetti container (only shown if passed >= 70%) -->
       <div v-if="percentage >= 70" class="confetti-container">
         <div v-for="n in 50" :key="n" class="confetti"></div>
@@ -16,9 +75,11 @@
           <div class="score-circle-wrapper">
             <svg class="score-svg" viewBox="0 0 100 100">
               <circle class="score-bg" cx="50" cy="50" r="45" />
-              <circle 
-                class="score-progress" 
-                cx="50" cy="50" r="45" 
+              <circle
+                class="score-progress"
+                cx="50"
+                cy="50"
+                r="45"
                 :style="{ strokeDashoffset: dashOffset, stroke: scoreColor }"
               />
             </svg>
@@ -84,8 +145,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr 
-                  v-for="sub in result.subjectBreakdown" 
+                <tr
+                  v-for="sub in result.subjectBreakdown"
                   :key="sub.subject"
                   :class="getSubjectRowClass(sub.score, sub.total)"
                 >
@@ -101,69 +162,9 @@
         </div>
       </div>
     </div>
-    
+
     <div v-else class="container text-center loading-state">
       <span class="spinner"></span> Loading results...
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import { useExamStore } from '../stores/exam'
-import '../styles/results.css'
-
-const router = useRouter()
-const examStore = useExamStore()
-
-const result = computed(() => examStore.result)
-
-onMounted(() => {
-  if (!result.value) {
-    router.push('/dashboard')
-  }
-})
-
-const percentage = computed(() => {
-  if (!result.value) return 0
-  return Math.round((result.value.passed / result.value.totalQuestions) * 100)
-})
-
-const headerEmoji = computed(() => {
-  if (percentage.value >= 70) return '🎉'
-  if (percentage.value >= 50) return '💪'
-  return '📚'
-})
-
-const headerMessage = computed(() => {
-  if (percentage.value >= 70) return 'Excellent Performance!'
-  if (percentage.value >= 50) return 'Good Effort!'
-  return 'Keep Practicing!'
-})
-
-const dashOffset = computed(() => {
-  const fraction = percentage.value / 100
-  const circumference = 2 * Math.PI * 45
-  return circumference * (1 - fraction)
-})
-
-const scoreColor = computed(() => {
-  if (percentage.value >= 70) return '#27ae60' // green
-  if (percentage.value >= 50) return '#f39c12' // orange
-  return '#e74c3c' // red
-})
-
-const getGrade = (score, total) => {
-  const pct = (score / total) * 100
-  if (pct >= 70) return 'A'
-  if (pct >= 60) return 'B'
-  if (pct >= 50) return 'C'
-  return 'F'
-}
-
-const getSubjectRowClass = (score, total) => {
-  const pct = (score / total) * 100
-  return pct >= 50 ? 'row-pass' : 'row-fail'
-}
-</script>

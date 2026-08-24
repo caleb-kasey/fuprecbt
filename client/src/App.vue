@@ -1,3 +1,12 @@
+<script setup>
+import { useRoute } from 'vue-router';
+import { useAuthStore } from './stores/auth';
+import Navbar from './components/Navbar.vue';
+
+const authStore = useAuthStore();
+const route = useRoute();
+</script>
+
 <template>
   <div id="app">
     <Navbar v-if="authStore.isLoggedIn && route.path !== '/exam'" />
@@ -9,22 +18,6 @@
   </div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-import Navbar from './components/Navbar.vue'
-import { useAuthStore } from './stores/auth'
-import { useThemeStore } from './stores/theme'
-import { useRoute } from 'vue-router'
-
-const authStore = useAuthStore()
-const themeStore = useThemeStore()
-const route = useRoute()
-
-onMounted(() => {
-  // Theme and Auth are initialized in main.js
-})
-</script>
-
 <style>
-/* Root app styles handled in main.css */
+/* Root styles managed in main.css */
 </style>

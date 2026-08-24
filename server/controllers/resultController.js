@@ -1,47 +1,63 @@
 const Question = require('../models/Question');
 const Result = require('../models/Result');
 
-// @desc    Submit exam answers and get graded result
-// @route   POST /api/results/submit
-// @access  Protected
-const submitExam = async (req, res) => {
+/**
+ * @desc    Submit exam answers and get graded result
+ * @route   POST /api/results/submit
+ * @access  Protected
+ */
+const submitExam = async (req, res, next) => {
   try {
     const { answers, subjects, year } = req.body;
     const userId = req.user.userId;
 
     // Validate required fields
     if (!answers || !Array.isArray(answers) || answers.length === 0) {
-      return res.status(400).json({ message: 'Answers array is required.' });
+      return res.status(400).json({
+        success: false,
+        message: 'Answers array is required and cannot be empty.',
+      });
     }
 
     if (!subjects || !Array.isArray(subjects) || subjects.length === 0) {
-      return res.status(400).json({ message: 'Subjects array is required.' });
+      return res.status(400).json({
+        success: false,
+        message: 'Subjects array is required and cannot be empty.',
+      });
     }
 
     if (!year) {
-      return res.status(400).json({ message: 'Year is required.' });
+      return res.status(400).json({
+        success: false,
+        message: 'Year is required.',
+      });
     }
 
-    // Validate that English and Mathematics are included (compulsory)
-    const normalizedSubjects = subjects.map((s) => s.toLowerCase());
+    // Validate compulsory subjects
+    const normalizedSubjects = subjects.map((s) => s.trim().toLowerCase());
     if (!normalizedSubjects.includes('english')) {
-      return res.status(400).json({ message: 'English is a compulsory subject.' });
+      return res.status(400).json({
+        success: false,
+        message: 'English is a compulsory subject.',
+      });
     }
     if (!normalizedSubjects.includes('mathematics')) {
-      return res.status(400).json({ message: 'Mathematics is a compulsory subject.' });
+      return res.status(400).json({
+        success: false,
+        message: 'Mathematics is a compulsory subject.',
+      });
     }
 
-    // Fetch correct answers from MongoDB for all submitted question IDs
+    // Fetch correct answers for all submitted question IDs
     const questionIds = answers.map((a) => a.questionId);
     const questions = await Question.find({ _id: { $in: questionIds } });
 
-    // Build a lookup map: questionId → question document
-    const questionMap = {};
+    // Build lookup map: questionId -> question doc
+    const questionMap = new Map();
     questions.forEach((q) => {
-      questionMap[q._id.toString()] = q;
+      questionMap.set(q._id.toString(), q);
     });
 
-    // Grade each answer server-side
     let totalScore = 0;
     let attempted = 0;
     let passed = 0;
@@ -54,7 +70,7 @@ const submitExam = async (req, res) => {
     });
 
     const gradedAnswers = answers.map((ans) => {
-      const question = questionMap[ans.questionId];
+      const question = questionMap.get(ans.questionId?.toString());
 
       if (!question) {
         return {
@@ -76,7 +92,6 @@ const submitExam = async (req, res) => {
         failed++;
       }
 
-      // Track subject breakdown
       const subj = question.subject.toLowerCase();
       if (subjectScores[subj]) {
         subjectScores[subj].total++;
@@ -113,23 +128,21 @@ const submitExam = async (req, res) => {
       completedAt: new Date(),
     });
 
-    // Return full result with correctAnswer and explanation for review
-    // Populate question details for the review page
-    const populatedAnswers = await Promise.all(
-      gradedAnswers.map(async (ans) => {
-        const question = questionMap[ans.questionId];
-        return {
-          ...ans,
-          questionText: question ? question.questionText : 'Question not found',
-          options: question ? question.options : {},
-          explanation: question ? question.explanation : '',
-          passage: question ? question.passage : null,
-          subject: question ? question.subject : 'unknown',
-        };
-      })
-    );
+    // Populate question details for the review payload
+    const populatedAnswers = gradedAnswers.map((ans) => {
+      const question = questionMap.get(ans.questionId?.toString());
+      return {
+        ...ans,
+        questionText: question ? question.questionText : 'Question not found',
+        options: question ? question.options : {},
+        explanation: question ? question.explanation : '',
+        passage: question ? question.passage : null,
+        subject: question ? question.subject : 'unknown',
+      };
+    });
 
-    res.status(201).json({
+    return res.status(201).json({
+      success: true,
       message: 'Exam submitted successfully!',
       result: {
         _id: result._id,
@@ -147,55 +160,60 @@ const submitExam = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error('Submit Exam Error:', error.message);
-    res.status(500).json({ message: 'Server error submitting exam.' });
+    next(error);
   }
 };
 
-// @desc    Get all results for a user (dashboard)
-// @route   GET /api/results/:userId
-// @access  Protected
-const getUserResults = async (req, res) => {
+/**
+ * @desc    Get all results for a user (dashboard history)
+ * @route   GET /api/results/:userId
+ * @access  Protected
+ */
+const getUserResults = async (req, res, next) => {
   try {
     const { userId } = req.params;
 
     const results = await Result.find({ userId })
-      .select('-answers') // Exclude full answers array for the list view
+      .select('-answers')
       .sort({ completedAt: -1 });
 
-    res.status(200).json({
+    return res.status(200).json({
+      success: true,
       count: results.length,
       results,
     });
   } catch (error) {
-    console.error('Get User Results Error:', error.message);
-    res.status(500).json({ message: 'Server error fetching results.' });
+    next(error);
   }
 };
 
-// @desc    Get a single result for review
-// @route   GET /api/results/review/:id
-// @access  Protected
-const getReview = async (req, res) => {
+/**
+ * @desc    Get a single result for detailed review
+ * @route   GET /api/results/review/:id
+ * @access  Protected
+ */
+const getReview = async (req, res, next) => {
   try {
     const { id } = req.params;
 
     const result = await Result.findById(id);
     if (!result) {
-      return res.status(404).json({ message: 'Result not found.' });
+      return res.status(404).json({
+        success: false,
+        message: 'Result not found.',
+      });
     }
 
-    // Fetch question details for each answer
     const questionIds = result.answers.map((a) => a.questionId);
     const questions = await Question.find({ _id: { $in: questionIds } });
 
-    const questionMap = {};
+    const questionMap = new Map();
     questions.forEach((q) => {
-      questionMap[q._id.toString()] = q;
+      questionMap.set(q._id.toString(), q);
     });
 
     const detailedAnswers = result.answers.map((ans) => {
-      const question = questionMap[ans.questionId.toString()];
+      const question = questionMap.get(ans.questionId?.toString());
       return {
         questionId: ans.questionId,
         selectedAnswer: ans.selectedAnswer,
@@ -210,7 +228,8 @@ const getReview = async (req, res) => {
       };
     });
 
-    res.status(200).json({
+    return res.status(200).json({
+      success: true,
       _id: result._id,
       userId: result.userId,
       subjects: result.subjects,
@@ -225,9 +244,12 @@ const getReview = async (req, res) => {
       completedAt: result.completedAt,
     });
   } catch (error) {
-    console.error('Get Review Error:', error.message);
-    res.status(500).json({ message: 'Server error fetching review.' });
+    next(error);
   }
 };
 
-module.exports = { submitExam, getUserResults, getReview };
+module.exports = {
+  submitExam,
+  getUserResults,
+  getReview,
+};

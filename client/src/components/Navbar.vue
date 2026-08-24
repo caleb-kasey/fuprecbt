@@ -1,3 +1,26 @@
+<script setup>
+import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth';
+import { useThemeStore } from '../stores/theme';
+
+const authStore = useAuthStore();
+const themeStore = useThemeStore();
+const router = useRouter();
+
+const isDrawerOpen = ref(false);
+
+const userInitials = computed(() => {
+  const name = authStore.currentUser?.name || 'User';
+  return name.charAt(0).toUpperCase();
+});
+
+const handleLogout = () => {
+  isDrawerOpen.value = false;
+  authStore.logout();
+};
+</script>
+
 <template>
   <nav class="navbar">
     <div class="nav-container">
@@ -22,7 +45,7 @@
       </div>
 
       <!-- Mobile Hamburger -->
-      <button class="hamburger mobile-only" @click="isDrawerOpen = true">
+      <button class="hamburger mobile-only" @click="isDrawerOpen = true" aria-label="Open Menu">
         ☰
       </button>
     </div>
@@ -36,7 +59,7 @@
               <div class="avatar">{{ userInitials }}</div>
               <span class="user-name">{{ authStore.currentUser?.name }}</span>
             </div>
-            <button class="close-btn" @click="isDrawerOpen = false">✕</button>
+            <button class="close-btn" @click="isDrawerOpen = false" aria-label="Close Menu">✕</button>
           </div>
           <div class="drawer-links">
             <router-link to="/dashboard" class="drawer-link" @click="isDrawerOpen = false">Dashboard</router-link>
@@ -50,28 +73,6 @@
     </transition>
   </nav>
 </template>
-
-<script setup>
-import { ref, computed } from 'vue'
-import { useAuthStore } from '../stores/auth'
-import { useThemeStore } from '../stores/theme'
-import { useRouter } from 'vue-router'
-
-const authStore = useAuthStore()
-const themeStore = useThemeStore()
-const router = useRouter()
-const isDrawerOpen = ref(false)
-
-const userInitials = computed(() => {
-  const name = authStore.currentUser?.name || 'User'
-  return name.charAt(0).toUpperCase()
-})
-
-const handleLogout = () => {
-  isDrawerOpen.value = false
-  authStore.logout()
-}
-</script>
 
 <style scoped>
 .navbar {

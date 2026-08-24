@@ -1,3 +1,7 @@
+<script setup>
+import '../styles/landing.css';
+</script>
+
 <template>
   <div class="landing-page">
     <section class="hero">
@@ -72,7 +76,3 @@
     </footer>
   </div>
 </template>
-
-<script setup>
-import '../styles/landing.css'
-</script>

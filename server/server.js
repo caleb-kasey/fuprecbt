@@ -1,32 +1,67 @@
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
+const env = require('./config/env');
 const connectDB = require('./config/db');
+const authRoutes = require('./routes/authRoutes');
+const questionRoutes = require('./routes/questionRoutes');
+const resultRoutes = require('./routes/resultRoutes');
+const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
-// Load environment variables
-dotenv.config();
-
-// Connect to MongoDB
+// Initialize database connection
 connectDB();
 
 const app = express();
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+// Security & Parsing Middleware
+app.use(cors({
+  origin: env.CORS_ORIGIN === '*' ? true : env.CORS_ORIGIN,
+  credentials: true,
+}));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/questions', require('./routes/questionRoutes'));
-app.use('/api/results', require('./routes/resultRoutes'));
-
-// Health check
+// Health Check Endpoints
 app.get('/', (req, res) => {
-  res.json({ message: 'FUPRE CBT Portal API is running 🚀' });
+  res.status(200).json({
+    success: true,
+    message: 'FUPRE CBT Portal API is running 🚀',
+    environment: env.NODE_ENV,
+    timestamp: new Date().toISOString(),
+  });
 });
 
-// Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'healthy',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+  });
 });
+
+// API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/questions', questionRoutes);
+app.use('/api/results', resultRoutes);
+
+// Error Handling Middleware
+app.use(notFound);
+app.use(errorHandler);
+
+// Start HTTP Server
+const server = app.listen(env.PORT, () => {
+  console.log(`🚀 Server running in ${env.NODE_ENV} mode on port ${env.PORT}`);
+});
+
+// Graceful Shutdown
+const handleShutdown = (signal) => {
+  console.log(`\n🛑 Received ${signal}. Gracefully shutting down...`);
+  server.close(() => {
+    console.log('HTTP server closed.');
+    process.exit(0);
+  });
+};
+
+process.on('SIGTERM', () => handleShutdown('SIGTERM'));
+process.on('SIGINT', () => handleShutdown('SIGINT'));
+
+module.exports = app;

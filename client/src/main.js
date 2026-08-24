@@ -1,33 +1,34 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import 'katex/dist/katex.min.css'
-import './styles/main.css'
+import App from './App.vue';
+import router from './router';
+import { useAuthStore } from './stores/auth';
+import { useThemeStore } from './stores/theme';
 
-import { useAuthStore } from './stores/auth'
-import { useThemeStore } from './stores/theme'
+import 'katex/dist/katex.min.css';
+import './styles/main.css';
 
-const app = createApp(App)
-const pinia = createPinia()
+const app = createApp(App);
+const pinia = createPinia();
 
-app.use(pinia)
-
+// Subscribe to exam store mutations for local persistence
 pinia.use(({ store }) => {
   if (store.$id === 'exam') {
-    store.$subscribe((mutation, state) => {
-      localStorage.setItem('examState', JSON.stringify(state))
-    })
+    store.$subscribe((_, state) => {
+      localStorage.setItem('examState', JSON.stringify(state));
+    });
   }
-})
+});
 
-app.use(router)
+app.use(pinia);
+app.use(router);
 
-const authStore = useAuthStore()
-authStore.initAuth()
+// Initialize Stores
+const authStore = useAuthStore();
+authStore.initAuth();
 
-const themeStore = useThemeStore()
-themeStore.initTheme()
+const themeStore = useThemeStore();
+themeStore.initTheme();
 
-app.mount('#app')
+app.mount('#app');

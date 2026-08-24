@@ -1,42 +1,55 @@
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const User = require("../models/User");
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const env = require('../config/env');
 
-// Generate JWT token
+/**
+ * Generate JWT token for authenticated user
+ * @param {Object} user - User document
+ * @returns {string} Signed JWT token
+ */
 const generateToken = (user) => {
   return jwt.sign(
     { userId: user._id, name: user.name },
-    process.env.JWT_SECRET,
-    { expiresIn: "7d" },
+    env.JWT_SECRET,
+    { expiresIn: env.JWT_EXPIRES_IN }
   );
 };
 
-// @desc    Register a new user
-// @route   POST /api/auth/signup
-// @access  Public
-const signup = async (req, res) => {
+/**
+ * @desc    Register a new user
+ * @route   POST /api/auth/signup
+ * @access  Public
+ */
+const signup = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
 
     // Validate required fields
     if (!name || !email || !password) {
-      return res
-        .status(400)
-        .json({ message: "Please provide name, email, and password." });
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide name, email, and password.',
+      });
     }
 
+    const trimmedName = name.trim();
+    const normalizedEmail = email.trim().toLowerCase();
+
     if (password.length < 6) {
-      return res
-        .status(400)
-        .json({ message: "Password must be at least 6 characters." });
+      return res.status(400).json({
+        success: false,
+        message: 'Password must be at least 6 characters long.',
+      });
     }
 
     // Check if user already exists
-    const existingUser = await User.findOne({ email: email.toLowerCase() });
+    const existingUser = await User.findOne({ email: normalizedEmail });
     if (existingUser) {
-      return res
-        .status(400)
-        .json({ message: "An account with this email already exists." });
+      return res.status(400).json({
+        success: false,
+        message: 'An account with this email already exists.',
+      });
     }
 
     // Hash password
@@ -45,15 +58,16 @@ const signup = async (req, res) => {
 
     // Create user
     const user = await User.create({
-      name,
-      email: email.toLowerCase(),
+      name: trimmedName,
+      email: normalizedEmail,
       password: hashedPassword,
     });
 
     // Generate token
     const token = generateToken(user);
 
-    res.status(201).json({
+    return res.status(201).json({
+      success: true,
       token,
       user: {
         id: user._id,
@@ -62,41 +76,51 @@ const signup = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error("Signup Error:", error.message);
-    res.status(500).json({ message: "Server error during signup." });
+    next(error);
   }
 };
 
-// @desc    Login user
-// @route   POST /api/auth/login
-// @access  Public
-const login = async (req, res) => {
+/**
+ * @desc    Authenticate user & get token
+ * @route   POST /api/auth/login
+ * @access  Public
+ */
+const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    // Validate required fields
     if (!email || !password) {
-      return res
-        .status(400)
-        .json({ message: "Please provide email and password." });
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide email and password.',
+      });
     }
 
+    const normalizedEmail = email.trim().toLowerCase();
+
     // Find user by email
-    const user = await User.findOne({ email: email.toLowerCase() });
+    const user = await User.findOne({ email: normalizedEmail });
     if (!user) {
-      return res.status(400).json({ message: "Invalid email or password." });
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid email or password.',
+      });
     }
 
     // Compare passwords
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ message: "Invalid email or password." });
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid email or password.',
+      });
     }
 
     // Generate token
     const token = generateToken(user);
 
-    res.status(200).json({
+    return res.status(200).json({
+      success: true,
       token,
       user: {
         id: user._id,
@@ -105,9 +129,11 @@ const login = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error("Login Error:", error.message);
-    res.status(500).json({ message: "Server error during login." });
+    next(error);
   }
 };
 
-module.exports = { signup, login };
+module.exports = {
+  signup,
+  login,
+};

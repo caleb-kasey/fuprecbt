@@ -1,7 +1,54 @@
+<script setup>
+import { ref, computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import * as api from '../services/api';
+import MathText from '../components/MathText.vue';
+
+const route = useRoute();
+const reviewData = ref(null);
+const loading = ref(true);
+const errorMsg = ref('');
+
+const statusFilter = ref('all');
+const subjectFilter = ref('all');
+
+onMounted(async () => {
+  const resultId = route.params.id;
+  try {
+    const res = await api.getReview(resultId);
+    reviewData.value = res.data;
+  } catch (err) {
+    errorMsg.value = 'Failed to load review data. ' + (err.message || '');
+  } finally {
+    loading.value = false;
+  }
+});
+
+const getOriginalIndex = (qId) => {
+  if (!reviewData.value?.answers) return 0;
+  return reviewData.value.answers.findIndex((q) => q.questionId === qId);
+};
+
+const filteredQuestions = computed(() => {
+  if (!reviewData.value?.answers) return [];
+  return reviewData.value.answers.filter((q) => {
+    const qStatus = q.isCorrect ? 'correct' : 'wrong';
+    const matchStatus = statusFilter.value === 'all' || qStatus === statusFilter.value;
+    const matchSubject = subjectFilter.value === 'all' || q.subject === subjectFilter.value;
+    return matchStatus && matchSubject;
+  });
+});
+
+const getOptionClass = (q, key) => {
+  if (key === q.correctAnswer) return 'correct-ans';
+  if (key === q.selectedAnswer && !q.isCorrect) return 'wrong-ans';
+  return '';
+};
+</script>
+
 <template>
   <div class="page-pad review-page">
     <div class="container">
-      
       <div v-if="loading" class="text-center loading-state">
         <span class="spinner"></span> Loading review...
       </div>
@@ -11,7 +58,7 @@
           <div class="header-content">
             <h1>Exam Review</h1>
             <p class="review-stats">
-              <span class="text-green">{{ reviewData.passed }} Correct</span> &middot; 
+              <span class="text-green">{{ reviewData.passed }} Correct</span> &middot;
               <span class="text-red">{{ reviewData.failed }} Wrong</span>
             </p>
           </div>
@@ -35,10 +82,10 @@
             <span class="filter-label">Subject:</span>
             <div class="filter-pills">
               <button :class="['pill', { active: subjectFilter === 'all' }]" @click="subjectFilter = 'all'">All</button>
-              <button 
-                v-for="sub in reviewData.subjects" 
+              <button
+                v-for="sub in reviewData.subjects"
                 :key="sub"
-                :class="['pill', { active: subjectFilter === sub }]" 
+                :class="['pill', { active: subjectFilter === sub }]"
                 @click="subjectFilter = sub"
               >
                 {{ sub.charAt(0).toUpperCase() + sub.slice(1) }}
@@ -48,8 +95,8 @@
         </div>
 
         <div class="questions-list">
-          <div 
-            v-for="(q, index) in filteredQuestions" 
+          <div
+            v-for="(q) in filteredQuestions"
             :key="q.questionId"
             class="review-card card"
           >
@@ -76,8 +123,8 @@
             </div>
 
             <div class="options-list">
-              <div 
-                v-for="(text, key) in q.options" 
+              <div
+                v-for="(text, key) in q.options"
                 :key="key"
                 :class="['review-option', getOptionClass(q, key)]"
               >
@@ -94,71 +141,22 @@
                 <MathText :text="q.explanation" :block="false" />
               </div>
             </div>
-            
           </div>
-          
+
           <div v-if="filteredQuestions.length === 0" class="empty-state card">
             No questions match the selected filters.
           </div>
         </div>
       </div>
-      
+
       <div v-else-if="errorMsg" class="error-msg text-center mt-4">
         {{ errorMsg }}
-        <br>
+        <br />
         <button class="btn btn-outline mt-4" @click="$router.push('/dashboard')">Go to Dashboard</button>
       </div>
-
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref, computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import * as api from '../services/api'
-import MathText from '../components/MathText.vue'
-
-const route = useRoute()
-const reviewData = ref(null)
-const loading = ref(true)
-const errorMsg = ref('')
-
-const statusFilter = ref('all')
-const subjectFilter = ref('all')
-
-onMounted(async () => {
-  const resultId = route.params.id
-  try {
-    const res = await api.getReview(resultId)
-    reviewData.value = res.data
-  } catch (err) {
-    errorMsg.value = "Failed to load review data. " + err.message
-  } finally {
-    loading.value = false
-  }
-})
-
-const getOriginalIndex = (qId) => {
-  return reviewData.value.answers.findIndex(q => q.questionId === qId)
-}
-
-const filteredQuestions = computed(() => {
-  if (!reviewData.value) return []
-  return reviewData.value.answers.filter(q => {
-    const qStatus = q.isCorrect ? 'correct' : 'wrong'
-    const matchStatus = statusFilter.value === 'all' || qStatus === statusFilter.value
-    const matchSubject = subjectFilter.value === 'all' || q.subject === subjectFilter.value
-    return matchStatus && matchSubject
-  })
-})
-
-const getOptionClass = (q, key) => {
-  if (key === q.correctAnswer) return 'correct-ans'
-  if (key === q.selectedAnswer && !q.isCorrect) return 'wrong-ans'
-  return ''
-}
-</script>
 
 <style scoped>
 .review-page {

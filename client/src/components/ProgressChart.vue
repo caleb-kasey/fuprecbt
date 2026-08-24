@@ -1,21 +1,53 @@
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+  results: {
+    type: Array,
+    default: () => [],
+  },
+});
+
+const groupedStats = computed(() => {
+  if (!props.results.length) return [];
+
+  const byYear = props.results.reduce((acc, r) => {
+    if (!acc[r.year]) {
+      acc[r.year] = { total: 0, count: 0 };
+    }
+    const percent = (r.passed / r.totalQuestions) * 100;
+    acc[r.year].total += percent;
+    acc[r.year].count += 1;
+    return acc;
+  }, {});
+
+  return Object.keys(byYear)
+    .map((year) => ({
+      year,
+      avgScore: byYear[year].total / byYear[year].count,
+    }))
+    .sort((a, b) => a.year.localeCompare(b.year));
+});
+</script>
+
 <template>
   <div class="progress-chart card">
     <h3 class="chart-title">Your Progress Over Time</h3>
-    
+
     <div v-if="!results || results.length === 0" class="empty-chart">
       No exam history yet
     </div>
-    
+
     <div v-else class="chart-container">
-      <div 
-        v-for="(stat, index) in groupedStats" 
-        :key="index" 
+      <div
+        v-for="(stat, index) in groupedStats"
+        :key="index"
         class="bar-wrapper"
       >
         <div class="bar-label-top">{{ Math.round(stat.avgScore) }}%</div>
         <div class="bar-track">
-          <div 
-            class="bar-fill" 
+          <div
+            class="bar-fill"
             :style="{ height: stat.avgScore + '%', opacity: 0.5 + (stat.avgScore / 200) }"
           ></div>
         </div>
@@ -24,36 +56,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { computed, ref, onMounted } from 'vue'
-
-const props = defineProps({
-  results: {
-    type: Array,
-    default: () => []
-  }
-})
-
-const groupedStats = computed(() => {
-  if (!props.results.length) return []
-  
-  const byYear = props.results.reduce((acc, r) => {
-    if (!acc[r.year]) {
-      acc[r.year] = { total: 0, count: 0 }
-    }
-    const percent = (r.passed / r.totalQuestions) * 100
-    acc[r.year].total += percent
-    acc[r.year].count += 1
-    return acc
-  }, {})
-
-  return Object.keys(byYear).map(year => ({
-    year,
-    avgScore: byYear[year].total / byYear[year].count
-  })).sort((a, b) => a.year.localeCompare(b.year))
-})
-</script>
 
 <style scoped>
 .progress-chart {

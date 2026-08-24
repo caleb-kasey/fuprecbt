@@ -1,14 +1,125 @@
+<script setup>
+import { ref } from 'vue';
+
+const isOpen = ref(false);
+const expression = ref('');
+const result = ref('0');
+let currentOperand = '';
+let previousOperand = '';
+let operation = undefined;
+
+const updateDisplay = () => {
+  if (operation) {
+    expression.value = `${previousOperand} ${operation} ${currentOperand}`;
+  } else {
+    expression.value = currentOperand;
+  }
+};
+
+const clear = () => {
+  currentOperand = '';
+  previousOperand = '';
+  operation = undefined;
+  expression.value = '';
+  result.value = '0';
+};
+
+const inputDigit = (digit) => {
+  if (result.value === 'Error') clear();
+  if (currentOperand.includes('.') && digit === '.') return;
+  currentOperand = currentOperand.toString() + digit.toString();
+  result.value = currentOperand || '0';
+  updateDisplay();
+};
+
+const inputDot = () => {
+  if (currentOperand === '') {
+    currentOperand = '0.';
+  } else if (!currentOperand.includes('.')) {
+    currentOperand += '.';
+  }
+  result.value = currentOperand;
+  updateDisplay();
+};
+
+const calculate = (final = true) => {
+  let computation;
+  const prev = parseFloat(previousOperand);
+  const current = parseFloat(currentOperand);
+  if (isNaN(prev) || isNaN(current)) return;
+
+  switch (operation) {
+    case '+':
+      computation = prev + current;
+      break;
+    case '−':
+      computation = prev - current;
+      break;
+    case '×':
+      computation = prev * current;
+      break;
+    case '÷':
+      computation = current === 0 ? 'Error' : prev / current;
+      break;
+    default:
+      return;
+  }
+
+  currentOperand = computation.toString();
+  operation = undefined;
+  previousOperand = '';
+  result.value = currentOperand;
+
+  if (final) {
+    expression.value = '';
+  } else {
+    previousOperand = currentOperand;
+    currentOperand = '';
+    updateDisplay();
+  }
+};
+
+const inputOperator = (op) => {
+  if (result.value === 'Error') clear();
+  if (currentOperand === '' && previousOperand === '') return;
+  if (currentOperand !== '') {
+    if (previousOperand !== '') {
+      calculate(false);
+    } else {
+      previousOperand = currentOperand;
+      currentOperand = '';
+    }
+  }
+  operation = op;
+  updateDisplay();
+};
+
+const toggleSign = () => {
+  if (currentOperand === '') return;
+  currentOperand = (parseFloat(currentOperand) * -1).toString();
+  result.value = currentOperand;
+  updateDisplay();
+};
+
+const percent = () => {
+  if (currentOperand === '') return;
+  currentOperand = (parseFloat(currentOperand) / 100).toString();
+  result.value = currentOperand;
+  updateDisplay();
+};
+</script>
+
 <template>
   <div class="calculator-wrapper">
-    <button class="calc-fab" @click="isOpen = !isOpen" title="Calculator">
+    <button class="calc-fab" @click="isOpen = !isOpen" title="Calculator" aria-label="Toggle Calculator">
       🖩
     </button>
-    
+
     <transition name="slide-up">
       <div v-if="isOpen" class="calc-overlay">
         <div class="calc-header">
           <span>Calculator</span>
-          <button @click="isOpen = false" class="close-btn">✕</button>
+          <button @click="isOpen = false" class="close-btn" aria-label="Close Calculator">✕</button>
         </div>
         <div class="calc-display">
           <div class="calc-expression">{{ expression }}</div>
@@ -19,22 +130,22 @@
           <button @click="toggleSign" class="btn-action">±</button>
           <button @click="percent" class="btn-action">%</button>
           <button @click="inputOperator('÷')" class="btn-op">÷</button>
-          
+
           <button @click="inputDigit(7)">7</button>
           <button @click="inputDigit(8)">8</button>
           <button @click="inputDigit(9)">9</button>
           <button @click="inputOperator('×')" class="btn-op">×</button>
-          
+
           <button @click="inputDigit(4)">4</button>
           <button @click="inputDigit(5)">5</button>
           <button @click="inputDigit(6)">6</button>
           <button @click="inputOperator('−')" class="btn-op">−</button>
-          
+
           <button @click="inputDigit(1)">1</button>
           <button @click="inputDigit(2)">2</button>
           <button @click="inputDigit(3)">3</button>
           <button @click="inputOperator('+')" class="btn-op">+</button>
-          
+
           <button @click="inputDigit(0)" class="wide">0</button>
           <button @click="inputDot">.</button>
           <button @click="calculate" class="btn-equals">=</button>
@@ -43,120 +154,6 @@
     </transition>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-const isOpen = ref(false)
-const expression = ref('')
-const result = ref('0')
-let currentOperand = ''
-let previousOperand = ''
-let operation = undefined
-
-const updateDisplay = () => {
-  if (operation) {
-    expression.value = `${previousOperand} ${operation} ${currentOperand}`
-  } else {
-    expression.value = currentOperand
-  }
-}
-
-const inputDigit = (digit) => {
-  if (result.value === 'Error') clear()
-  if (currentOperand.includes('.') && digit === '.') return
-  currentOperand = currentOperand.toString() + digit.toString()
-  result.value = currentOperand || '0'
-  updateDisplay()
-}
-
-const inputDot = () => {
-  if (currentOperand === '') {
-    currentOperand = '0.'
-  } else if (!currentOperand.includes('.')) {
-    currentOperand += '.'
-  }
-  result.value = currentOperand
-  updateDisplay()
-}
-
-const inputOperator = (op) => {
-  if (result.value === 'Error') clear()
-  if (currentOperand === '' && previousOperand === '') return
-  if (currentOperand !== '') {
-    if (previousOperand !== '') {
-      calculate(false)
-    } else {
-      previousOperand = currentOperand
-      currentOperand = ''
-    }
-  }
-  operation = op
-  updateDisplay()
-}
-
-const calculate = (final = true) => {
-  let computation
-  const prev = parseFloat(previousOperand)
-  const current = parseFloat(currentOperand)
-  if (isNaN(prev) || isNaN(current)) return
-  
-  switch (operation) {
-    case '+':
-      computation = prev + current
-      break
-    case '−':
-      computation = prev - current
-      break
-    case '×':
-      computation = prev * current
-      break
-    case '÷':
-      if (current === 0) {
-        computation = 'Error'
-      } else {
-        computation = prev / current
-      }
-      break
-    default:
-      return
-  }
-  
-  currentOperand = computation.toString()
-  operation = undefined
-  previousOperand = ''
-  result.value = currentOperand
-  if (final) {
-    expression.value = ''
-  } else {
-    previousOperand = currentOperand
-    currentOperand = ''
-    updateDisplay()
-  }
-}
-
-const clear = () => {
-  currentOperand = ''
-  previousOperand = ''
-  operation = undefined
-  expression.value = ''
-  result.value = '0'
-}
-
-const toggleSign = () => {
-  if (currentOperand === '') return
-  currentOperand = (parseFloat(currentOperand) * -1).toString()
-  result.value = currentOperand
-  updateDisplay()
-}
-
-const percent = () => {
-  if (currentOperand === '') return
-  currentOperand = (parseFloat(currentOperand) / 100).toString()
-  result.value = currentOperand
-  updateDisplay()
-}
-</script>
 
 <style scoped>
 .calculator-wrapper {
